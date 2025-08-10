@@ -3,9 +3,9 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import type { Module } from '@/data/modules';
-import { ExternalIcon, GitHubIcon } from './Icons';
-import { fadeUp } from './anim';
-import CountUp from './CountUp';
+import { ExternalIcon, GitHubIcon } from '@/components/ui/Icons';
+import { fadeUp } from '@/lib/anim';
+import CountUp from '@/components/ui/CountUp';
 
 export default function ModuleCard({ mod, index }: { mod: Module; index: number }) {
   return (

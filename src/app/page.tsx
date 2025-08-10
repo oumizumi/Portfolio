@@ -1,8 +1,8 @@
-import NavBar from '@/components/NavBar';
-import Hero from '@/components/Hero';
-import { FeaturesSection, ModulesSection, AboutSection } from '@/components/Sections';
-import Contact from '@/components/Contact';
-import Footer from '@/components/Footer';
+import NavBar from '@/components/layout/NavBar';
+import Hero from '@/components/sections/Hero';
+import { FeaturesSection, ModulesSection, AboutSection } from '@/components/sections/Sections';
+import Contact from '@/components/sections/Contact';
+import Footer from '@/components/layout/Footer';
 
 export default function Page() {
   return (

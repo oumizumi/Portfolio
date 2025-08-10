@@ -1,11 +1,11 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import FeatureCard from './FeatureCard';
-import ModuleCard from './ModuleCard';
+import FeatureCard from '@/components/cards/FeatureCard';
+import ModuleCard from '@/components/cards/ModuleCard';
 import { features } from '@/data/features';
 import { modules } from '@/data/modules';
-import { fadeUp, staggerContainer } from './anim';
+import { fadeUp, staggerContainer } from '@/lib/anim';
 
 export function FeaturesSection() {
   return (
@@ -19,7 +19,7 @@ export function FeaturesSection() {
           className="max-w-6xl mx-auto px-4"
         >
           <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-extralight tracking-tight">
-            What I've Worked On
+            What I’ve Worked On
           </motion.h2>
         </motion.div>
       </section>

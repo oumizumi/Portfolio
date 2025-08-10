@@ -2,10 +2,10 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import MacDots from './MacDots';
+import MacDots from '@/components/ui/MacDots';
 import type { Feature } from '@/data/features';
-import { fadeUp } from './anim';
-import CountUp from './CountUp';
+import { fadeUp } from '@/lib/anim';
+import CountUp from '@/components/ui/CountUp';
 
 export default function FeatureCard({ feature, index }: { feature: Feature; index: number }) {
   return (

@@ -8,14 +8,14 @@ function isValidEmail(email: string): boolean {
 
 export async function POST(req: NextRequest) {
   try {
-    const { name, email, subject, message, honeypot } = await req.json();
+    const { name, email, message, honeypot } = await req.json();
 
     // Honeypot spam trap
     if (honeypot) {
       return new Response(JSON.stringify({ ok: true }), { status: 200 });
     }
 
-    if (!name || !email || !subject || !message) {
+    if (!name || !email || !message) {
       return new Response(JSON.stringify({ error: 'Missing required fields' }), { status: 400 });
     }
 
@@ -29,13 +29,12 @@ export async function POST(req: NextRequest) {
     }
 
     const toAddress = 'ofgharad@gmail.com';
-    const safeSubject = String(subject).slice(0, 160);
+    const derivedSubject = `Portfolio contact from ${email}`.slice(0, 160);
 
     const html = `
       <div style="font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #0f172a;">
         <h2 style="margin: 0 0 12px;">New portfolio contact</h2>
         <p style="margin: 0 0 8px;"><strong>From:</strong> ${name} &lt;${email}&gt;</p>
-        <p style="margin: 0 0 16px;"><strong>Subject:</strong> ${safeSubject}</p>
         <div style="padding: 12px 14px; border-left: 3px solid #6366f1; background: #f8fafc; white-space: pre-wrap;">${String(message)
           .replace(/&/g, '&amp;')
           .replace(/</g, '&lt;')
@@ -53,7 +52,7 @@ export async function POST(req: NextRequest) {
         from: 'Portfolio <onboarding@resend.dev>',
         to: [toAddress],
         reply_to: email,
-        subject: `Portfolio contact: ${safeSubject}`,
+        subject: derivedSubject,
         html,
       }),
     });

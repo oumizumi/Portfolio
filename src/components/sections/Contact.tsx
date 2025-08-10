@@ -2,8 +2,8 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { GitHubIcon, LinkedInIcon, MailIcon } from './Icons';
-import { fadeUp, staggerContainer } from './anim';
+import { GitHubIcon, LinkedInIcon, MailIcon } from '@/components/ui/Icons';
+import { fadeUp, staggerContainer } from '@/lib/anim';
 import { useState } from 'react';
 
 export default function Contact() {
@@ -17,7 +17,6 @@ export default function Contact() {
     const payload = {
       name: String(formData.get('name') || ''),
       email: String(formData.get('email') || ''),
-      subject: String(formData.get('subject') || ''),
       message: String(formData.get('message') || ''),
       honeypot: String(formData.get('company') || ''),
     };
@@ -34,9 +33,10 @@ export default function Contact() {
       if (!res.ok) throw new Error(data?.error || 'Failed to send');
       setStatus('success');
       form.reset();
-    } catch (err: any) {
+    } catch (err) {
       setStatus('error');
-      setError(err.message || 'Something went wrong');
+      const message = err instanceof Error ? err.message : 'Something went wrong';
+      setError(message);
     }
   }
 
@@ -99,11 +99,10 @@ export default function Contact() {
         >
           <input type="text" name="company" className="hidden" tabIndex={-1} autoComplete="off" aria-hidden="true" />
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <input name="name" className="bg-transparent border border-gray-300 dark:border-gray-800/50 rounded-lg px-3 py-2" placeholder="Name" aria-label="Name" required />
-            <input name="email" type="email" className="bg-transparent border border-gray-300 dark:border-gray-800/50 rounded-lg px-3 py-2" placeholder="Email" aria-label="Email" required />
+            <input name="name" className="bg-transparent border border-gray-300 dark:border-gray-800/50 rounded-lg px-3 py-2" placeholder="Your name" aria-label="Name" required />
+            <input name="email" type="email" className="bg-transparent border border-gray-300 dark:border-gray-800/50 rounded-lg px-3 py-2" placeholder="your@email.com" aria-label="Email" required />
           </div>
-          <input name="subject" className="bg-transparent border border-gray-300 dark:border-gray-800/50 rounded-lg px-3 py-2 w-full" placeholder="Subject" aria-label="Subject" required />
-          <textarea name="message" className="bg-transparent border border-gray-300 dark:border-gray-800/50 rounded-lg px-3 py-2 w-full min-h-32" placeholder="Message" aria-label="Message" required />
+          <textarea name="message" className="bg-transparent border border-gray-300 dark:border-gray-800/50 rounded-lg px-3 py-2 w-full min-h-32" placeholder="Your message" aria-label="Message" required />
           <div className="flex items-center gap-3">
             <button disabled={status==='sending'} className="px-4 py-2 rounded-lg bg-violet-600 hover:bg-violet-500 disabled:opacity-60 text-white font-medium">
               {status==='sending' ? 'Sending…' : 'Submit'}
