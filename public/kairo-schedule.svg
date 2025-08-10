@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+  <rect width="1200" height="675" rx="24" fill="#0f172a"/>
+  <g fill="#334155">
+    <rect x="140" y="180" width="240" height="160" rx="10"/>
+    <rect x="420" y="180" width="240" height="160" rx="10"/>
+    <rect x="700" y="180" width="360" height="160" rx="10"/>
+    <rect x="140" y="380" width="360" height="140" rx="10"/>
+    <rect x="540" y="380" width="520" height="140" rx="10"/>
+  </g>
+  <text x="60" y="630" fill="#e2e8f0" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="40">Schedule</text>
+</svg>

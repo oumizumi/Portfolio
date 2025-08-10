@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+  <rect width="1200" height="675" rx="24" fill="#0f172a"/>
+  <g stroke="#94a3b8" stroke-width="4" fill="none">
+    <path d="M200 360 C 300 200, 500 200, 600 360 S 900 520, 1000 360"/>
+  </g>
+  <text x="60" y="630" fill="#e2e8f0" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="40">Kairosync</text>
+</svg>

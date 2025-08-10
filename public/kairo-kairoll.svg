@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+  <rect width="1200" height="675" rx="24" fill="#0f172a"/>
+  <g fill="#334155">
+    <rect x="160" y="200" width="880" height="80" rx="10"/>
+    <rect x="160" y="320" width="740" height="80" rx="10"/>
+    <rect x="160" y="440" width="620" height="80" rx="10"/>
+  </g>
+  <text x="60" y="630" fill="#e2e8f0" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="40">Kairoll</text>
+</svg>

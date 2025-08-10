@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+  <rect width="1200" height="675" rx="24" fill="#0f172a"/>
+  <g stroke="#94a3b8" stroke-width="3" fill="none">
+    <circle cx="240" cy="300" r="80"/>
+    <circle cx="520" cy="300" r="80"/>
+    <circle cx="800" cy="300" r="80"/>
+  </g>
+  <text x="60" y="630" fill="#e2e8f0" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="40">Professors</text>
+</svg>

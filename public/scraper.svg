@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.0"/>
+      <stop offset="100%" stop-color="#0b0f19" stop-opacity="0.0"/>
+    </linearGradient>
+    <filter id="s" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#1e293b" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Window frame -->
+  <rect x="120" y="80" rx="14" ry="14" width="960" height="480" fill="url(#g)" stroke="#1f2937" stroke-opacity="0.6"/>
+  <rect x="120" y="80" rx="14" ry="14" width="960" height="60" fill="#0f172a" stroke="#1f2937" stroke-opacity="0.6"/>
+  <circle cx="156" cy="110" r="6" fill="#ef4444"/>
+  <circle cx="176" cy="110" r="6" fill="#f59e0b"/>
+  <circle cx="196" cy="110" r="6" fill="#10b981"/>
+
+  <!-- Grid backdrop -->
+  <g opacity="0.25">
+    <path d="M180 190 H1080" stroke="#334155" stroke-width="1"/>
+    <path d="M180 230 H1080" stroke="#334155" stroke-width="1"/>
+    <path d="M180 270 H1080" stroke="#334155" stroke-width="1"/>
+    <path d="M180 310 H1080" stroke="#334155" stroke-width="1"/>
+    <path d="M180 350 H1080" stroke="#334155" stroke-width="1"/>
+    <path d="M180 390 H1080" stroke="#334155" stroke-width="1"/>
+    <path d="M180 430 H1080" stroke="#334155" stroke-width="1"/>
+    <path d="M180 470 H1080" stroke="#334155" stroke-width="1"/>
+    <path d="M220 160 V520" stroke="#334155" stroke-width="1"/>
+    <path d="M300 160 V520" stroke="#334155" stroke-width="1"/>
+    <path d="M380 160 V520" stroke="#334155" stroke-width="1"/>
+    <path d="M460 160 V520" stroke="#334155" stroke-width="1"/>
+    <path d="M540 160 V520" stroke="#334155" stroke-width="1"/>
+    <path d="M620 160 V520" stroke="#334155" stroke-width="1"/>
+    <path d="M700 160 V520" stroke="#334155" stroke-width="1"/>
+    <path d="M780 160 V520" stroke="#334155" stroke-width="1"/>
+    <path d="M860 160 V520" stroke="#334155" stroke-width="1"/>
+    <path d="M940 160 V520" stroke="#334155" stroke-width="1"/>
+    <path d="M1020 160 V520" stroke="#334155" stroke-width="1"/>
+  </g>
+
+  <!-- Nodes representing pages -->
+  <g filter="url(#s)">
+    <rect x="220" y="220" width="160" height="110" rx="10" fill="#0b1220" stroke="#334155"/>
+    <rect x="520" y="190" width="220" height="140" rx="10" fill="#0b1220" stroke="#334155"/>
+    <rect x="860" y="260" width="140" height="100" rx="10" fill="#0b1220" stroke="#334155"/>
+  </g>
+
+  <!-- Code bracket icon in the center node -->
+  <g transform="translate(520,190)">
+    <path d="M58 55 L78 35 M78 35 L58 15" stroke="#60a5fa" stroke-width="3" stroke-linecap="round"/>
+    <path d="M162 15 L142 35 M142 35 L162 55" stroke="#60a5fa" stroke-width="3" stroke-linecap="round"/>
+    <rect x="20" y="80" width="180" height="32" rx="6" fill="#0f172a" stroke="#334155"/>
+    <rect x="20" y="120" width="140" height="28" rx="6" fill="#0f172a" stroke="#334155"/>
+  </g>
+
+  <!-- Arrows to indicate scraping flow -->
+  <g stroke="#60a5fa" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M380 275 C 430 275, 460 260, 520 260" fill="none"/>
+    <path d="M512 255 L520 260 L512 265" fill="none"/>
+
+    <path d="M740 260 C 800 260, 820 300, 860 300" fill="none"/>
+    <path d="M852 295 L860 300 L852 305" fill="none"/>
+  </g>
+
+  <!-- Database/storage symbol -->
+  <g transform="translate(300,400)">
+    <ellipse cx="0" cy="0" rx="70" ry="18" fill="#0b1220" stroke="#334155"/>
+    <path d="M-70 0 V40 C -70 52, 70 52, 70 40 V0" fill="#0b1220" stroke="#334155"/>
+    <ellipse cx="0" cy="40" rx="70" ry="18" fill="#0b1220" stroke="#334155"/>
+  </g>
+
+  <!-- Highlight ring -->
+  <circle cx="630" cy="300" r="180" stroke="#60a5fa" stroke-opacity="0.25" stroke-width="2"/>
+</svg>
