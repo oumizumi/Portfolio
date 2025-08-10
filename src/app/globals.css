@@ -9,8 +9,8 @@
   --glow-b: rgba(26, 44, 72, 0.40);  /* was 0.52 */
   --glow-c: rgba(14, 20, 34, 0.92);
   --vignette-end: rgba(0,0,0,0.18);  /* was 0.22 */
-  --grain-opacity: 0.12;
-  --grain-size: 48px;
+  --grain-opacity: 0.28;
+  --grain-size: 20px;
 }
 
 :root.light {
@@ -20,8 +20,8 @@
   --glow-b: rgba(120, 150, 210, 0.12);
   --glow-c: rgba(255, 255, 255, 0.92);
   --vignette-end: rgba(0,0,0,0.06);
-  --grain-opacity: 0.07;
-  --grain-size: 52px; /* a bit larger to look softer in light */
+  --grain-opacity: 0.18;
+  --grain-size: 24px; /* denser but still softer in light */
 }
 
 @layer utilities {
@@ -56,10 +56,10 @@
     background-image: url("data:image/svg+xml;utf8,\
 <svg xmlns='http://www.w3.org/2000/svg' width='64' height='64'>\
   <filter id='n'>\
-    <feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/>\
+    <feTurbulence type='fractalNoise' baseFrequency='1.5' numOctaves='4' stitchTiles='stitch'/>\
     <feColorMatrix type='saturate' values='0'/>\
   </filter>\
-  <rect width='100%%' height='100%%' filter='url(#n)' opacity='0.12'/>\
+  <rect width='100%%' height='100%%' filter='url(#n)' opacity='0.35'/>\
 </svg>");
     background-size: var(--grain-size) var(--grain-size);
     background-repeat: repeat;
