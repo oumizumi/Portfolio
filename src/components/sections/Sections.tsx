@@ -51,13 +51,13 @@ export function ModulesSection() {
 
 export function AboutSection() {
   return (
-    <section id="about" className="min-h-screen snap-start flex items-center py-12 md:py-16">
+    <section id="about" className="relative min-h-screen snap-start flex items-center py-12 md:py-16">
       <motion.div
         variants={staggerContainer}
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.3 }}
-        className="max-w-3xl mx-auto px-6 w-full"
+        className="relative z-20 max-w-3xl mx-auto px-6 w-full"
       >
         <motion.h3 variants={fadeUp} className="text-4xl md:text-5xl font-extralight tracking-tight mb-6">
           A little bit about me

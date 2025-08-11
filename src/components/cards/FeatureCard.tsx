@@ -8,6 +8,8 @@ import { fadeUp } from '@/lib/anim';
 import CountUp from '@/components/ui/CountUp';
 
 export default function FeatureCard({ feature, index }: { feature: Feature; index: number }) {
+  const isThirdFeature = index === 2 || feature.image.includes('scraper.svg');
+
   return (
     <motion.article
       variants={fadeUp}
@@ -19,7 +21,7 @@ export default function FeatureCard({ feature, index }: { feature: Feature; inde
     >
       <div className="relative">
         <MacDots />
-        <div className="relative aspect-[16/9]">
+        <div className={`relative aspect-[16/9] ${isThirdFeature ? 'bg-white dark:bg-transparent' : ''}`}>
           <Image
             src={feature.image}
             alt={feature.title}

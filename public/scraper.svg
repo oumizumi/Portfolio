@@ -16,28 +16,7 @@
   <circle cx="176" cy="110" r="6" fill="#f59e0b"/>
   <circle cx="196" cy="110" r="6" fill="#10b981"/>
 
-  <!-- Grid backdrop -->
-  <g opacity="0.25">
-    <path d="M180 190 H1080" stroke="#334155" stroke-width="1"/>
-    <path d="M180 230 H1080" stroke="#334155" stroke-width="1"/>
-    <path d="M180 270 H1080" stroke="#334155" stroke-width="1"/>
-    <path d="M180 310 H1080" stroke="#334155" stroke-width="1"/>
-    <path d="M180 350 H1080" stroke="#334155" stroke-width="1"/>
-    <path d="M180 390 H1080" stroke="#334155" stroke-width="1"/>
-    <path d="M180 430 H1080" stroke="#334155" stroke-width="1"/>
-    <path d="M180 470 H1080" stroke="#334155" stroke-width="1"/>
-    <path d="M220 160 V520" stroke="#334155" stroke-width="1"/>
-    <path d="M300 160 V520" stroke="#334155" stroke-width="1"/>
-    <path d="M380 160 V520" stroke="#334155" stroke-width="1"/>
-    <path d="M460 160 V520" stroke="#334155" stroke-width="1"/>
-    <path d="M540 160 V520" stroke="#334155" stroke-width="1"/>
-    <path d="M620 160 V520" stroke="#334155" stroke-width="1"/>
-    <path d="M700 160 V520" stroke="#334155" stroke-width="1"/>
-    <path d="M780 160 V520" stroke="#334155" stroke-width="1"/>
-    <path d="M860 160 V520" stroke="#334155" stroke-width="1"/>
-    <path d="M940 160 V520" stroke="#334155" stroke-width="1"/>
-    <path d="M1020 160 V520" stroke="#334155" stroke-width="1"/>
-  </g>
+  <!-- Removed internal grid backdrop -->
 
   <!-- Nodes representing pages -->
   <g filter="url(#s)">
