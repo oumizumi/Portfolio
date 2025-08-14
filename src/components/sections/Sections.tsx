@@ -19,7 +19,7 @@ export function FeaturesSection() {
           className="max-w-6xl mx-auto px-4"
         >
           <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-extralight tracking-tight">
-            What I’ve Worked On
+            What I&apos;ve Worked On
           </motion.h2>
         </motion.div>
       </section>
@@ -63,7 +63,7 @@ export function AboutSection() {
           A little bit about me
         </motion.h3>
         <motion.p variants={fadeUp} className="text-lg text-gray-700 dark:text-white/80 leading-relaxed">
-          I’m a second-year Computer Science student at uOttawa. I enjoy building projects from scratch, figuring things out along the way, and getting a little better with each one. When I’m not coding, I’m usually watching football, spending time with friends and family, or out in nature.
+          I&apos;m a second-year Computer Science student at uOttawa. I enjoy building projects from scratch, figuring things out along the way, and getting a little better with each one. When I&apos;m off of my computer, I&apos;m usually watching football, spending time with friends and family, or out in nature.
         </motion.p>
         <motion.div variants={fadeUp} className="mt-8 flex items-center gap-4">
           <a
@@ -83,6 +83,10 @@ export function AboutSection() {
             <li>Postgres</li>
             <li>OpenAI</li>
             <li>Vercel</li>
+            <li>Java</li>
+            <li>Python</li>
+            <li>RestAPI</li>
+            <li>Javascript </li>
           </ul>
         </motion.div>
       </motion.div>

@@ -52,7 +52,7 @@ export default function Contact() {
         <div className="space-y-4">
           <motion.h3 variants={fadeUp} className="text-3xl font-light tracking-tight">Get in touch</motion.h3>
           <motion.p variants={fadeUp} className="text-gray-700 dark:text-white/70 max-w-prose">
-            I’m always open to hearing about new projects and opportunities. Whether you have a question or just want to say hello, I’ll get back to you as soon as possible.
+            I&apos;m always open to hearing about new projects and opportunities. Whether you have a question or just want to say hello, I&apos;ll get back to you as soon as possible.
           </motion.p>
 
           <motion.div variants={fadeUp} className="flex flex-col items-start gap-3 text-gray-700 dark:text-white/70">
@@ -108,7 +108,7 @@ export default function Contact() {
               {status==='sending' ? 'Sending…' : 'Submit'}
             </button>
             {status==='success' && <span className="text-green-600 dark:text-green-400">Message sent!</span>}
-            {status==='error' && <span className="text-red-600 dark:text-red-400">{error || 'Failed to send'}</span>}
+            {status==='error' && <span className="text-red-600 dark:text-red-400">{error || 'Failed to send.Please try again later'}</span>}
           </div>
         </motion.form>
       </motion.div>
