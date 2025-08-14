@@ -6,6 +6,20 @@ function isValidEmail(email: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
+function formatFromHeader(rawFrom: string | undefined): string {
+  const fallback = 'Portfolio <onboarding@resend.dev>';
+  if (!rawFrom) return fallback;
+  const trimmed = rawFrom.trim();
+  if (trimmed.includes('<') && trimmed.includes('>')) {
+    return trimmed;
+  }
+  const emailMatch = trimmed.match(/[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}/);
+  const email = emailMatch ? emailMatch[0] : '';
+  if (!email) return fallback;
+  const name = trimmed.replace(email, '').trim() || 'Portfolio';
+  return `${name} <${email}>`;
+}
+
 export async function POST(req: NextRequest) {
   try {
     const { name, email, message, honeypot } = await req.json();
@@ -28,7 +42,7 @@ export async function POST(req: NextRequest) {
       return new Response(JSON.stringify({ error: 'Email service not configured' }), { status: 500 });
     }
 
-    const toAddress = 'ofgharad@gmail.com';
+    const toAddress = process.env.CONTACT_TO_EMAIL || 'ofgharad@gmail.com';
     const derivedSubject = `Portfolio contact from ${email}`.slice(0, 160);
 
     const html = `
@@ -49,7 +63,7 @@ export async function POST(req: NextRequest) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'Portfolio <onboarding@resend.dev>',
+        from: formatFromHeader(process.env.RESEND_FROM),
         to: [toAddress],
         reply_to: email,
         subject: derivedSubject,
@@ -63,7 +77,7 @@ export async function POST(req: NextRequest) {
     }
 
     return new Response(JSON.stringify({ ok: true }), { status: 200 });
-  } catch (_err) {
+  } catch {
     return new Response(JSON.stringify({ error: 'Unexpected error' }), { status: 500 });
   }
 }
