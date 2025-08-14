@@ -54,8 +54,8 @@ export default function CountUp({
 
     const tick = (now: number) => {
       const t = Math.min(1, (now - start) / durationMs);
-      // easeOutCubic
-      const eased = 1 - Math.pow(1 - t, 3);
+      // stronger ease-out so it slows more near the end
+      const eased = t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
       const current = target * eased;
       setDisplay(prefix + formatNumber(current, decimals) + suffix);
       if (t < 1) {
