@@ -63,7 +63,7 @@ export function AboutSection() {
           A little bit about me
         </motion.h3>
         <motion.p variants={fadeUp} className="text-lg text-gray-700 dark:text-white/80 leading-relaxed">
-          I&apos;m a second-year Computer Science student at uOttawa. I enjoy building projects from scratch, figuring things out along the way, and getting a little better with each one. When I&apos;m off of my computer, I&apos;m usually watching football, spending time with friends and family, or out in nature.
+          I'm a second-year Computer Science student at uOttawa. I enjoy building projects from scratch, figuring things out along the way, and getting a little better with each one. When I'm off of my computer, I'm usually watching football, spending time with friends and family, or out in nature.
         </motion.p>
         <motion.div variants={fadeUp} className="mt-8 flex items-center gap-4">
           <a
@@ -87,6 +87,9 @@ export function AboutSection() {
             <li>Python</li>
             <li>RestAPI</li>
             <li>Javascript </li>
+            <li>Node.js</li>
+            <li>Playwright</li>
+            
           </ul>
         </motion.div>
       </motion.div>
