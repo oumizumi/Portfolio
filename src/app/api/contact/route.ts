@@ -42,7 +42,7 @@ export async function POST(req: NextRequest) {
       return new Response(JSON.stringify({ error: 'Email service not configured' }), { status: 500 });
     }
 
-    const toAddress = process.env.CONTACT_TO_EMAIL || 'ofgharad@gmail.com';
+    const toAddress = process.env.CONTACT_TO_EMAIL || 'oghar074@uottawa.ca';
     const derivedSubject = `Portfolio contact from ${email}`.slice(0, 160);
 
     const html = `

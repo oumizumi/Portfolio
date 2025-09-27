@@ -1,6 +1,7 @@
 import NavBar from '@/components/layout/NavBar';
 import Hero from '@/components/sections/Hero';
 import { FeaturesSection, ModulesSection, AboutSection } from '@/components/sections/Sections';
+import GitTimeline from '@/components/sections/GitTimeline';
 import Contact from '@/components/sections/Contact';
 import Footer from '@/components/layout/Footer';
 import FloatingDots from '@/components/ui/FloatingDots';
@@ -21,6 +22,7 @@ export default function Page() {
         <FeaturesSection />
         <ModulesSection />
         <AboutSection />
+        <GitTimeline />
         <Contact />
         <Footer />
       </div>

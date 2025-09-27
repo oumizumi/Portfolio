@@ -57,12 +57,12 @@ export default function Contact() {
 
           <motion.div variants={fadeUp} className="flex flex-col items-start gap-3 text-gray-700 dark:text-white/70">
             <a
-              href="mailto:ofgharad@gmail.com"
+              href="mailto:oghar074@uottawa.ca"
               aria-label="Email"
               className="inline-flex items-center gap-2 hover:opacity-90"
             >
               <MailIcon className="w-5 h-5" />
-              <span>ofgharad@gmail.com</span>
+              <span>oghar074@uottawa.ca</span>
             </a>
             <div className="inline-flex items-center gap-2" aria-label="Location: Ottawa, ON">
               <Image src="/globe.svg" alt="Location" width={20} height={20} />
@@ -104,11 +104,11 @@ export default function Contact() {
           </div>
           <textarea name="message" className="bg-transparent border border-gray-300 dark:border-gray-800/50 rounded-lg px-3 py-2 w-full min-h-32" placeholder="Your message" aria-label="Message" required />
           <div className="flex items-center gap-3">
-            <button disabled={status==='sending'} className="px-4 py-2 rounded-lg bg-violet-600 hover:bg-violet-500 disabled:opacity-60 text-white font-medium">
-              {status==='sending' ? 'Sending…' : 'Submit'}
+            <button disabled={status === 'sending'} className="px-4 py-2 rounded-lg bg-violet-600 hover:bg-violet-500 disabled:opacity-60 text-white font-medium">
+              {status === 'sending' ? 'Sending…' : 'Submit'}
             </button>
-            {status==='success' && <span className="text-green-600 dark:text-green-400">Message sent!</span>}
-            {status==='error' && <span className="text-red-600 dark:text-red-400">{error || 'Failed to send.Please try again later'}</span>}
+            {status === 'success' && <span className="text-green-600 dark:text-green-400">Message sent!</span>}
+            {status === 'error' && <span className="text-red-600 dark:text-red-400">{error || 'Failed to send.Please try again later'}</span>}
           </div>
         </motion.form>
       </motion.div>
