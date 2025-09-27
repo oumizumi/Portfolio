@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { fadeUp, staggerContainer } from '@/lib/anim';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 interface CommitData {
     date: string;
@@ -51,15 +51,11 @@ export default function GitTimeline() {
     const [mounted, setMounted] = useState(false);
 
 
-    useEffect(() => {
-        setMounted(true);
-        fetchGitHubData();
-        fetchLanguageData();
-    }, []);
 
 
 
-    const fetchGitHubData = async () => {
+
+    const fetchGitHubData = useCallback(async () => {
         try {
             setLoading(true);
 
@@ -76,7 +72,7 @@ export default function GitTimeline() {
             const data: CommitData[] = [];
             const contributions = contributionData.contributions;
 
-            contributions.forEach((contribution: any) => {
+            contributions.forEach((contribution: { date: string; count: number }) => {
                 const commits = contribution.count;
                 let level: 0 | 1 | 2 | 3 | 4 = 0;
 
@@ -94,7 +90,7 @@ export default function GitTimeline() {
             });
 
             setCommitData(data);
-        } catch (err) {
+        } catch {
             console.log('GitHub contributions API failed, trying fallback...');
 
             // Fallback to GitHub events API
@@ -141,16 +137,16 @@ export default function GitTimeline() {
                 }
 
                 setCommitData(data);
-            } catch (fallbackErr) {
+            } catch {
                 setError('Failed to load GitHub data');
                 setCommitData(generateFallbackData());
             }
         } finally {
             setLoading(false);
         }
-    };
+    }, []);
 
-    const fetchLanguageData = async () => {
+    const fetchLanguageData = useCallback(async () => {
         try {
             // Fetch user's repositories
             const reposResponse = await fetch('https://api.github.com/users/oumizumi/repos?per_page=100&sort=updated');
@@ -165,7 +161,7 @@ export default function GitTimeline() {
             const languageStats: { [key: string]: number } = {};
 
             // Fetch languages for each repo (limited to avoid rate limits)
-            const languagePromises = repos.slice(0, 20).map(async (repo: any) => {
+            const languagePromises = repos.slice(0, 20).map(async (repo: { name: string }) => {
                 try {
                     const langResponse = await fetch(`https://api.github.com/repos/oumizumi/${repo.name}/languages`);
                     if (langResponse.ok) {
@@ -174,7 +170,7 @@ export default function GitTimeline() {
                             languageStats[lang] = (languageStats[lang] || 0) + (bytes as number);
                         });
                     }
-                } catch (err) {
+                } catch {
                     // Skip failed requests
                 }
             });
@@ -217,8 +213,8 @@ export default function GitTimeline() {
                 .slice(0, 8); // Top 8 languages
 
             setLanguages(processedLanguages);
-        } catch (err) {
-            console.log('Failed to fetch language data:', err);
+        } catch (error) {
+            console.log('Failed to fetch language data:', error);
             // Set fallback languages based on your profile
             setLanguages([
                 { name: 'TypeScript', percentage: 35, color: '#3178c6' },
@@ -229,7 +225,13 @@ export default function GitTimeline() {
                 { name: 'CSS', percentage: 7, color: '#1572B6' }
             ]);
         }
-    };
+    }, []);
+
+    useEffect(() => {
+        setMounted(true);
+        fetchGitHubData();
+        fetchLanguageData();
+    }, [fetchGitHubData, fetchLanguageData]);
 
     const totalCommits = commitData.reduce((sum, day) => sum + day.commits, 0);
 
