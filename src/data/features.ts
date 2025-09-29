@@ -24,7 +24,7 @@ export const features: Feature[] = [
       { label: 'subjects', value: '160+' },
     ],
     tech: ['Python', 'Django', 'PostgreSQL', 'Typescript'],
-    ctaUrl: 'https://kairo-public.vercel.app',
+    ctaUrl: 'https://kairo-gilt.vercel.app',
     tags: ['assistant'],
     bullets: [
       'Real-time university data at scale with resilient web scraping (dynamic selectors, iframe handling, rate limiting, deduplication)',
