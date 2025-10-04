@@ -35,6 +35,7 @@ function getSmtpConfig() {
 async function trySendSmtp(params: { from: string; to: string; subject: string; html: string; replyTo?: string }) {
   const cfg = getSmtpConfig();
   if (!cfg) return { ok: false as const, error: 'SMTP not configured' };
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const nodemailer = (await import('nodemailer')).default as any;
   const transporter = nodemailer.createTransport({
     host: cfg.host,
