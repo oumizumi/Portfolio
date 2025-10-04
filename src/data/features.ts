@@ -40,7 +40,7 @@ export const features: Feature[] = [
       { label: 'professors', value: '1,200+' },
       { label: 'documents parsed', value: '30k+' },
     ],
-    tech: ['Typescript', 'Python', 'Node.js', ],
+    tech: ['Typescript', 'Python', 'Node.js',],
     tags: ['insights'],
   },
   {
