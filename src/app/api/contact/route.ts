@@ -95,7 +95,6 @@ export async function POST(req: NextRequest) {
       return new Response(JSON.stringify({ ok: true }), { status: 200 });
     }
 
-    console.log('SMTP failed:', smtpAttempt.error);
 
     // Fallback to Resend if available
     const apiKey = process.env.RESEND_API_KEY;
