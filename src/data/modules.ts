@@ -7,6 +7,7 @@ export type Module = {
   tagline: string;
   description: string;
   image: string;
+  video?: string; // Optional video path - if provided, video will be used instead of image
   metrics?: Metric[];
   tech: string[];
   codeUrl?: string;

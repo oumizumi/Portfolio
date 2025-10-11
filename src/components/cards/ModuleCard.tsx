@@ -18,14 +18,25 @@ export default function ModuleCard({ mod, index }: { mod: Module; index: number 
       className="group border border-gray-300 dark:border-gray-800/40 rounded-xl overflow-hidden bg-white/40 dark:bg-transparent backdrop-blur supports-[backdrop-filter]:bg-white/30"
     >
       <div className="relative aspect-[16/9]">
-        <Image
-          src={mod.image}
-          alt={mod.title}
-          fill
-          className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]"
-          sizes="(min-width: 1024px) 50vw, 100vw"
-          priority={index < 2}
-        />
+        {mod.video ? (
+          <video
+            src={mod.video}
+            className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]"
+            autoPlay
+            loop
+            muted
+            playsInline
+          />
+        ) : (
+          <Image
+            src={mod.image}
+            alt={mod.title}
+            fill
+            className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]"
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            priority={index < 2}
+          />
+        )}
       </div>
       <div className="p-6 space-y-3">
         <div className="text-sm text-gray-600 dark:text-white/60">{mod.tagline}</div>

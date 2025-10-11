@@ -56,6 +56,23 @@ export const features: Feature[] = [
     ],
     tech: ['Puppeteer', 'Playwright', 'TypeScript', 'Express.js'],
     tags: ['scrapers'],
+  },
+  {
+    order: 4,
+    title: 'LeetHub',
+    description: 'A Chrome extension that automatically synchronizes accepted LeetCode solutions to GitHub, enabling me to maintain a well-organized portfolio of their coding practice with real-time detection, smart organization, and zero-friction backup.',
+    image: '/leethub-demo.svg',
+    metrics: [
+      { label: 'Auto-sync time', value: '<2s' },
+      { label: 'Core Modules', value: '6' },
+      { label: 'Success Rate', value: '99%+' },
+    ],
+    tech: ['JavaScript', 'Chrome API', 'GitHub API', 'Manifest V3', 'REST API'],
+    ctaUrl: 'https://github.com/oumizumi/leethub',
+    bullets: [
+      'Real-time detection of accepted solutions with automatic GitHub push within 2 seconds',
+      'Modular architecture: service workers, content scripts, GitHub API integration with retry logic and error handling'
+    ],
   }
 ];
 
