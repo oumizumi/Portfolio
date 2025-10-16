@@ -6,6 +6,7 @@ import MacDots from '@/components/ui/MacDots';
 import type { Feature } from '@/data/features';
 import { fadeUp } from '@/lib/anim';
 import CountUp from '@/components/ui/CountUp';
+import ScraperDiagram from '@/components/ui/ScraperDiagram';
 
 export default function FeatureCard({ feature, index }: { feature: Feature; index: number }) {
   const isThirdFeature = index === 2 || feature.image.includes('scraper.svg');
@@ -22,14 +23,20 @@ export default function FeatureCard({ feature, index }: { feature: Feature; inde
       <div className="relative">
         <MacDots />
         <div className={`relative aspect-[16/9] ${isThirdFeature ? 'bg-white dark:bg-transparent' : ''}`}>
-          <Image
-            src={feature.image}
-            alt={feature.title}
-            fill
-            className="object-cover object-center mt-8 transition-transform duration-500 group-hover:scale-[1.03]"
-            sizes="(min-width: 1024px) 50vw, 100vw"
-            priority={index < 2}
-          />
+          {isThirdFeature ? (
+            <div className="absolute inset-0 flex items-center justify-center p-4 mt-8">
+              <ScraperDiagram />
+            </div>
+          ) : (
+            <Image
+              src={feature.image}
+              alt={feature.title}
+              fill
+              className="object-cover object-center mt-8 transition-transform duration-500 group-hover:scale-[1.03]"
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              priority={index < 2}
+            />
+          )}
         </div>
       </div>
       <div className="p-6 space-y-4">

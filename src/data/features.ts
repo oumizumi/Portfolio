@@ -22,8 +22,9 @@ export const features: Feature[] = [
     metrics: [
       { label: 'live courses indexed', value: '10,000+' },
       { label: 'subjects', value: '160+' },
+      { label: 'professors', value: '1200+'}
     ],
-    tech: ['Python', 'Django', 'PostgreSQL', 'Typescript'],
+    tech: ['Python', 'TypeScript', 'Django', 'React', 'Node.js' , 'PostgreSQL', 'OpenAI'],
     ctaUrl: 'https://kairo-gilt.vercel.app',
     tags: ['assistant'],
     bullets: [
@@ -40,21 +41,21 @@ export const features: Feature[] = [
       { label: 'professors', value: '1,200+' },
       { label: 'documents parsed', value: '30k+' },
     ],
-    tech: ['Typescript', 'Python', 'Node.js',],
+    tech: ['Python', 'TypeScript', 'Node.js'],
     tags: ['insights'],
   },
   {
     order: 3,
     title: 'Your Scrapers Overview',
     description: 'Multiple Headless scrapers that collect uOttawa course data across terms and expose structured, real-time availability.',
-    image: '/scraper.svg',
+    image: '/scraper-new.svg',
     metrics: [
       { label: 'total courses', value: '15k+' },
       { label: 'subjects', value: '160+' },
-      { label: 'prorgrams', value: '200+' },
+      { label: 'programs', value: '200+' },
       { label: 'terms', value: 'F25, W26, S/S25' },
     ],
-    tech: ['Puppeteer', 'Playwright', 'TypeScript', 'Express.js'],
+    tech: ['TypeScript', 'Puppeteer', 'Playwright', 'Express.js'],
     tags: ['scrapers'],
   },
   {

@@ -75,21 +75,32 @@ export function AboutSection() {
         </motion.div>
 
         <motion.div variants={fadeUp} className="mt-10 rounded-xl p-6 border border-gray-300 dark:border-gray-800/40 bg-white/40 dark:bg-transparent backdrop-blur supports-[backdrop-filter]:bg-white/30 text-gray-700 dark:text-white/70">
-          <div className="text-sm text-gray-600 dark:text-white/60 mb-2">Tech</div>
+          <div className="text-sm text-gray-600 dark:text-white/60 mb-2">Tech Stack</div>
           <ul className="grid grid-cols-2 gap-x-6 gap-y-2">
-            <li>Next.js</li>
+            <li>JavaScript</li>
             <li>TypeScript</li>
-            <li>Django</li>
-            <li>Postgres</li>
-            <li>OpenAI</li>
-            <li>Vercel</li>
-            <li>Java</li>
             <li>Python</li>
-            <li>RestAPI</li>
-            <li>Javascript </li>
+            <li>Java</li>
+            <li>C++</li>
+            <li>C</li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>Next.js</li>
+            <li>React</li>
+            <li>Django</li>
             <li>Node.js</li>
+            <li>Tailwind CSS</li>
+            <li>PostgreSQL</li>
+            <li>OpenAI</li>
+            <li>Puppeteer</li>
             <li>Playwright</li>
-            
+            <li>REST API</li>
+            <li>GraphQL</li>
+            <li>Git</li>
+            <li>Docker</li>
+            <li>AWS</li>
+            <li>Azure</li>
+            <li>Vercel</li>
           </ul>
         </motion.div>
       </motion.div>

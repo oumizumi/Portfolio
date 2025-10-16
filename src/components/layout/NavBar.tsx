@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 
 const links = [
-  { href: '/Oumer_Gharad_resume.pdf', label: 'Resume' },
+  { href: '/oumizumi.pdf', label: 'Resume' },
   { href: '#contact', label: 'Contact' },
 ];
 
@@ -20,8 +20,7 @@ export default function NavBar() {
           <li key={l.href}>
             <a
               href={l.href}
-              target={l.label === 'Resume' ? '_blank' : undefined}
-              rel={l.label === 'Resume' ? 'noopener noreferrer' : undefined}
+              download={l.label === 'Resume' ? 'Oumer_Gharad_Resume.pdf' : undefined}
               className="hover:underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-900/20 dark:focus-visible:ring-white/40 rounded"
             >
               {l.label}
