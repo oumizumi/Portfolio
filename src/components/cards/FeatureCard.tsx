@@ -7,9 +7,11 @@ import type { Feature } from '@/data/features';
 import { fadeUp } from '@/lib/anim';
 import CountUp from '@/components/ui/CountUp';
 import ScraperDiagram from '@/components/ui/ScraperDiagram';
+import LeetHubDiagram from '@/components/ui/LeetHubDiagram';
 
 export default function FeatureCard({ feature, index }: { feature: Feature; index: number }) {
   const isScraperFeature = index === 1 || feature.image.includes('scraper.svg');
+  const isLeetHubFeature = index === 2 || feature.image.includes('leethub');
 
   return (
     <motion.article
@@ -22,10 +24,14 @@ export default function FeatureCard({ feature, index }: { feature: Feature; inde
     >
       <div className="relative">
         <MacDots />
-        <div className={`relative aspect-[16/9] ${isScraperFeature ? 'bg-white dark:bg-transparent' : ''}`}>
+        <div className={`relative aspect-[16/9] ${isScraperFeature || isLeetHubFeature ? 'bg-white dark:bg-transparent' : ''}`}>
           {isScraperFeature ? (
             <div className="absolute inset-0 flex items-center justify-center p-4 mt-8">
               <ScraperDiagram />
+            </div>
+          ) : isLeetHubFeature ? (
+            <div className="absolute inset-0 flex items-center justify-center p-4 mt-8">
+              <LeetHubDiagram />
             </div>
           ) : (
             <Image
