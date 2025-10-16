@@ -34,18 +34,6 @@ export const features: Feature[] = [
   },
   {
     order: 2,
-    title: 'Professor Insights',
-    description: 'Summaries of professor ratings, and historical outcomes to help select the right instructor.',
-    image: '/kairo-professors.svg',
-    metrics: [
-      { label: 'professors', value: '1,200+' },
-      { label: 'documents parsed', value: '30k+' },
-    ],
-    tech: ['Python', 'TypeScript', 'Node.js'],
-    tags: ['insights'],
-  },
-  {
-    order: 3,
     title: 'Your Scrapers Overview',
     description: 'Multiple Headless scrapers that collect uOttawa course data across terms and expose structured, real-time availability.',
     image: '/scraper-new.svg',
@@ -59,10 +47,10 @@ export const features: Feature[] = [
     tags: ['scrapers'],
   },
   {
-    order: 4,
+    order: 3,
     title: 'LeetHub',
     description: 'A Chrome extension that automatically synchronizes accepted LeetCode solutions to GitHub, enabling me to maintain a well-organized portfolio of their coding practice with real-time detection, smart organization, and zero-friction backup.',
-    image: '/leethub-demo.svg',
+    image: '/leethub-new.svg',
     metrics: [
       { label: 'Auto-sync time', value: '<2s' },
       { label: 'Core Modules', value: '6' },

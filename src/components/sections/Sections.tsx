@@ -75,7 +75,7 @@ export function AboutSection() {
         </motion.div>
 
         <motion.div variants={fadeUp} className="mt-10 rounded-xl p-6 border border-gray-300 dark:border-gray-800/40 bg-white/40 dark:bg-transparent backdrop-blur supports-[backdrop-filter]:bg-white/30 text-gray-700 dark:text-white/70">
-          <div className="text-sm text-gray-600 dark:text-white/60 mb-2">Tech Stack</div>
+          <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Tech Stack</h4>
           <ul className="grid grid-cols-2 gap-x-6 gap-y-2">
             <li>JavaScript</li>
             <li>TypeScript</li>

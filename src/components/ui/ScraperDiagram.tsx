@@ -95,13 +95,13 @@ export default function ScraperDiagram() {
         <text x="90" y="35" textAnchor="middle" className="txt-2" fontSize="7" fontFamily="-apple-system, sans-serif">Descriptions</text>
       </g>
 
-      {/* Faculty */}
+      {/* Prof Directory */}
       <g transform="translate(60, 230)">
         <rect width="160" height="50" rx="8" className="card" strokeWidth="1.5"/>
         <circle cx="18" cy="25" r="10" fill="#f59e0b" opacity="0.15"/>
         <circle cx="18" cy="23" r="2.5" stroke="#f59e0b" strokeWidth="1.5" fill="none"/>
         <path d="M 13 29 Q 13 26, 18 26 Q 23 26, 23 29" stroke="#f59e0b" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
-        <text x="90" y="22" textAnchor="middle" className="txt-1" fontSize="10" fontWeight="600" fontFamily="-apple-system, sans-serif">Faculty Directory</text>
+        <text x="90" y="22" textAnchor="middle" className="txt-1" fontSize="10" fontWeight="600" fontFamily="-apple-system, sans-serif">Prof Directory</text>
         <text x="90" y="35" textAnchor="middle" className="txt-2" fontSize="7" fontFamily="-apple-system, sans-serif">uOttawa Official</text>
       </g>
 
@@ -137,7 +137,7 @@ export default function ScraperDiagram() {
       <text x="197.5" y="331" textAnchor="middle" className="stat-txt" fontSize="9" fontWeight="500" fontFamily="-apple-system, sans-serif">160 Subjects</text>
 
       <rect x="255" y="315" width="95" height="26" rx="13" className="stat" strokeWidth="1"/>
-      <text x="302.5" y="331" textAnchor="middle" className="stat-txt" fontSize="9" fontWeight="500" fontFamily="-apple-system, sans-serif">1,200+ Faculty</text>
+      <text x="302.5" y="331" textAnchor="middle" className="stat-txt" fontSize="9" fontWeight="500" fontFamily="-apple-system, sans-serif">1,200+ Profs</text>
 
       <rect x="365" y="315" width="90" height="26" rx="13" className="stat" strokeWidth="1"/>
       <text x="410" y="331" textAnchor="middle" className="stat-txt" fontSize="9" fontWeight="500" fontFamily="-apple-system, sans-serif">200 Programs</text>

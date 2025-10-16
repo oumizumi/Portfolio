@@ -317,51 +317,55 @@ export default function GitTimeline() {
                     )}
                 </motion.div>
 
-                <motion.div variants={fadeUp} className="bg-white dark:bg-gray-900/50 rounded-xl p-6 border border-gray-200 dark:border-gray-800">
-                    {/* Month labels */}
-                    <div className="flex justify-between text-xs text-gray-500 dark:text-gray-400 mb-2 ml-8">
-                        {months.map((month, index) => (
-                            <span key={month} className={index % 2 === 0 ? '' : 'opacity-0'}>
-                                {month}
-                            </span>
-                        ))}
-                    </div>
+                <motion.div variants={fadeUp} className="bg-white dark:bg-gray-900/50 rounded-xl p-4 md:p-6 border border-gray-200 dark:border-gray-800">
+                    <div className="overflow-x-auto -mx-4 px-4 md:mx-0 md:px-0">
+                        <div className="inline-block min-w-full">
+                            {/* Month labels - hidden on mobile */}
+                            <div className="hidden md:flex justify-between text-xs text-gray-500 dark:text-gray-400 mb-2 ml-8">
+                                {months.map((month, index) => (
+                                    <span key={month} className={index % 2 === 0 ? '' : 'opacity-0'}>
+                                        {month}
+                                    </span>
+                                ))}
+                            </div>
 
-                    <div className="flex gap-1">
-                        {/* Day labels */}
-                        <div className="flex flex-col gap-1 text-xs text-gray-500 dark:text-gray-400 mr-2">
-                            {days.map((day, index) => (
-                                <div key={day} className="h-3 flex items-center">
-                                    {index % 2 === 1 && <span>{day}</span>}
+                            <div className="flex gap-1">
+                                {/* Day labels */}
+                                <div className="flex flex-col gap-1 text-xs text-gray-500 dark:text-gray-400 mr-2">
+                                    {days.map((day, index) => (
+                                        <div key={day} className="h-3 flex items-center">
+                                            <span className="hidden md:inline">{index % 2 === 1 && day}</span>
+                                        </div>
+                                    ))}
                                 </div>
-                            ))}
-                        </div>
 
-                        {/* Commit grid */}
-                        <div className="flex gap-1 overflow-x-auto relative">
-                            {weeks.map((week, weekIndex) => (
-                                <div key={weekIndex} className="flex flex-col gap-1 relative">
-                                    {Array.from({ length: 7 }, (_, dayIndex) => {
-                                        const dayData = week.find((_, i) => {
-                                            const date = new Date(week[0].date);
-                                            date.setDate(date.getDate() + i);
-                                            return date.getDay() === dayIndex;
-                                        });
+                                {/* Commit grid */}
+                                <div className="flex gap-1">
+                                    {weeks.map((week, weekIndex) => (
+                                        <div key={weekIndex} className="flex flex-col gap-1 relative">
+                                            {Array.from({ length: 7 }, (_, dayIndex) => {
+                                                const dayData = week.find((_, i) => {
+                                                    const date = new Date(week[0].date);
+                                                    date.setDate(date.getDate() + i);
+                                                    return date.getDay() === dayIndex;
+                                                });
 
-                                        return (
-                                            <motion.div
-                                                key={`${weekIndex}-${dayIndex}`}
-                                                className={`w-3 h-3 rounded-sm ${getLevelColor(dayData?.level || 0)} cursor-pointer transition-all hover:scale-110`}
-                                                title={dayData ? `${dayData.commits} commits on ${dayData.date}` : 'No commits'}
-                                                whileHover={{ scale: 1.2 }}
-                                                initial={{ opacity: 0, scale: 0.8 }}
-                                                animate={{ opacity: 1, scale: 1 }}
-                                                transition={{ delay: weekIndex * 0.01 + dayIndex * 0.005 }}
-                                            />
-                                        );
-                                    })}
+                                                return (
+                                                    <motion.div
+                                                        key={`${weekIndex}-${dayIndex}`}
+                                                        className={`w-3 h-3 rounded-sm ${getLevelColor(dayData?.level || 0)} cursor-pointer transition-all hover:scale-110`}
+                                                        title={dayData ? `${dayData.commits} commits on ${dayData.date}` : 'No commits'}
+                                                        whileHover={{ scale: 1.2 }}
+                                                        initial={{ opacity: 0, scale: 0.8 }}
+                                                        animate={{ opacity: 1, scale: 1 }}
+                                                        transition={{ delay: weekIndex * 0.01 + dayIndex * 0.005 }}
+                                                    />
+                                                );
+                                            })}
+                                        </div>
+                                    ))}
                                 </div>
-                            ))}
+                            </div>
                         </div>
                     </div>
 

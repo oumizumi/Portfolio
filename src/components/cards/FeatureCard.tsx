@@ -9,7 +9,7 @@ import CountUp from '@/components/ui/CountUp';
 import ScraperDiagram from '@/components/ui/ScraperDiagram';
 
 export default function FeatureCard({ feature, index }: { feature: Feature; index: number }) {
-  const isThirdFeature = index === 2 || feature.image.includes('scraper.svg');
+  const isScraperFeature = index === 1 || feature.image.includes('scraper.svg');
 
   return (
     <motion.article
@@ -22,8 +22,8 @@ export default function FeatureCard({ feature, index }: { feature: Feature; inde
     >
       <div className="relative">
         <MacDots />
-        <div className={`relative aspect-[16/9] ${isThirdFeature ? 'bg-white dark:bg-transparent' : ''}`}>
-          {isThirdFeature ? (
+        <div className={`relative aspect-[16/9] ${isScraperFeature ? 'bg-white dark:bg-transparent' : ''}`}>
+          {isScraperFeature ? (
             <div className="absolute inset-0 flex items-center justify-center p-4 mt-8">
               <ScraperDiagram />
             </div>
