@@ -70,13 +70,13 @@ export default function Contact() {
             </div>
           </motion.div>
 
-          <motion.div variants={fadeUp} className="pt-2 flex items-center gap-4 text-gray-600 dark:text-white/70">
+          <motion.div variants={fadeUp} className="pt-2 flex items-center gap-4">
             <a
               href="https://github.com/oumizumi"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
-              className="hover:text-black dark:hover:text-white transition-colors"
+              className="!text-gray-700 dark:!text-white/70 hover:!text-black dark:hover:!text-white transition-colors"
             >
               <GitHubIcon className="w-5 h-5" />
             </a>
@@ -85,7 +85,7 @@ export default function Contact() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
-              className="hover:text-black dark:hover:text-white transition-colors"
+              className="!text-gray-700 dark:!text-white/70 hover:!text-black dark:hover:!text-white transition-colors"
             >
               <LinkedInIcon className="w-5 h-5" />
             </a>
@@ -107,8 +107,8 @@ export default function Contact() {
             <button disabled={status === 'sending'} className="px-4 py-2 rounded-lg bg-violet-600 hover:bg-violet-500 disabled:opacity-60 text-white font-medium">
               {status === 'sending' ? 'Sending…' : 'Submit'}
             </button>
-            {status === 'success' && <span className="text-green-600 dark:text-green-400">Message sent!</span>}
-            {status === 'error' && <span className="text-red-600 dark:text-red-400">{error || 'Failed to send.Please try again later'}</span>}
+            {status === 'success' && <span className="text-green-600 dark:text-green-400">Message sent! :)</span>}
+            {status === 'error' && <span className="text-red-600 dark:text-red-400">{error || 'Failed to send.Please try again later :('}</span>}
           </div>
         </motion.form>
       </motion.div>
