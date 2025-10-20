@@ -8,7 +8,17 @@ const config: Config = {
     './src/data/**/*.{ts,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      animation: {
+        shimmer: 'shimmer 2s linear infinite',
+      },
+      keyframes: {
+        shimmer: {
+          '0%': { backgroundPosition: '200% center' },
+          '100%': { backgroundPosition: '-200% center' },
+        },
+      },
+    },
   },
   plugins: [],
 };

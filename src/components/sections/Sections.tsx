@@ -60,10 +60,10 @@ export function AboutSection() {
         className="relative z-20 max-w-3xl mx-auto px-6 w-full"
       >
         <motion.h3 variants={fadeUp} className="text-4xl md:text-5xl font-extralight tracking-tight mb-6">
-          A little bit about me
+          A Bit About Me
         </motion.h3>
         <motion.p variants={fadeUp} className="text-lg text-gray-700 dark:text-white/80 leading-relaxed">
-          I&apos;m a second-year Computer Science student at uOttawa. I enjoy building projects from scratch, figuring things out along the way, and getting a little better with each one. When I&apos;m off of my computer, I&apos;m usually watching football, spending time with friends and family, or out in nature.
+          i enjoy creating software thats clean, reliable, and easy to use. i usually spend my free time watching football/soccer, spending with with my family and friends, or out in nature.
         </motion.p>
         <motion.div variants={fadeUp} className="mt-8 flex items-center gap-4">
           <a

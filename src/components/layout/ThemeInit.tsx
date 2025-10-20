@@ -18,7 +18,7 @@ export default function ThemeInit() {
     };
 
     // Initial
-    apply(mediaQuery.matches);
+    apply(false);  // default to light mode
 
     // Listen for changes
     const onChange = (e: MediaQueryListEvent) => apply(e.matches);
