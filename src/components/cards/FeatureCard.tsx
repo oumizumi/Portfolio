@@ -12,6 +12,7 @@ import LeetHubDiagram from '@/components/ui/LeetHubDiagram';
 export default function FeatureCard({ feature, index }: { feature: Feature; index: number }) {
   const isScraperFeature = index === 1 || feature.image.includes('scraper.svg');
   const isLeetHubFeature = index === 2 || feature.image.includes('leethub');
+  const isPLFeature = feature.image.includes('PL_logo');
 
   return (
     <motion.article
@@ -24,7 +25,7 @@ export default function FeatureCard({ feature, index }: { feature: Feature; inde
     >
       <div className="relative">
         <MacDots />
-        <div className={`relative aspect-[16/9] ${isScraperFeature || isLeetHubFeature ? 'bg-white dark:bg-transparent' : ''}`}>
+        <div className={`relative aspect-[16/9] ${isScraperFeature || isLeetHubFeature ? 'bg-white dark:bg-transparent' : ''} ${isPLFeature ? 'bg-white dark:bg-white' : ''}`}>
           {isScraperFeature ? (
             <div className="absolute inset-0 flex items-center justify-center p-4 mt-8">
               <ScraperDiagram />
@@ -38,7 +39,7 @@ export default function FeatureCard({ feature, index }: { feature: Feature; inde
               src={feature.image}
               alt={feature.title}
               fill
-              className="object-cover object-center mt-8 transition-transform duration-500 group-hover:scale-[1.03]"
+              className={`${isPLFeature ? 'object-contain p-12' : 'object-cover object-center'} mt-8 transition-transform duration-500 group-hover:scale-[1.03]`}
               sizes="(min-width: 1024px) 50vw, 100vw"
               priority={index < 2}
             />

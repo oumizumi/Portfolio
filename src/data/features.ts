@@ -22,9 +22,9 @@ export const features: Feature[] = [
     metrics: [
       { label: 'live courses indexed', value: '10,000+' },
       { label: 'subjects', value: '160+' },
-      { label: 'professors', value: '1200+'}
+      { label: 'professors', value: '1200+' }
     ],
-    tech: ['Python', 'TypeScript', 'Django', 'React', 'Node.js' , 'PostgreSQL', 'OpenAI'],
+    tech: ['Python', 'TypeScript', 'Django', 'React', 'Node.js', 'PostgreSQL', 'OpenAI'],
     ctaUrl: 'https://kairo-gilt.vercel.app',
     tags: ['assistant'],
     bullets: [
@@ -62,6 +62,22 @@ export const features: Feature[] = [
       'Real-time detection of accepted solutions with automatic GitHub push within 2 seconds',
       'Modular architecture: service workers, content scripts, GitHub API integration with retry logic and error handling'
     ],
+  },
+  {
+    order: 4,
+    title: 'Premier League Score Predictor',
+    description: 'Machine learning model that predicts football match scores using Random Forest regression. Trained on 137+ real matches with 0.5 goals MAE accuracy. Features automated weekly retraining and real-time data integration.',
+    image: '/PL_logo.svg',
+    metrics: [
+      { label: 'Chelsea winning the league', value: '<1%' },
+      { label: 'Chelsea winning the UCL', value: '<1%' },
+      { label: 'Charity FC - making mid-table teams look elite', value: '∞%' },
+    ],
+    tech: ['Python', 'Numpy', 'Scikit-learn', 'Pickle'],
+    ctaUrl: '',
+    bullets: [
+      'I love football - Eric Cantona'
+    ]
   }
 ];
 

@@ -38,6 +38,24 @@
 }
 
 @layer utilities {
+  .kairo-section {
+    position: relative;
+  }
+  
+  .kairo-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      circle at center,
+      rgba(40, 52, 82, 0.5) 0%,
+      rgba(15, 20, 40, 0.85) 80%
+    );
+    pointer-events: none;
+    z-index: 1;
+    transition: background 0.3s ease-in-out;
+  }
+  
   .bg-portfolio {
     position: relative;
     background-color: var(--bg-base);

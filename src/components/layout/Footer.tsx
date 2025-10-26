@@ -26,7 +26,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-gray-200 dark:border-gray-800/40">
       <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between text-sm">
-        <div className="text-gray-600 dark:text-white/60">© Oumer Gharad</div>
+        <div className="text-gray-600 dark:text-white/60">© oumizumi</div>
         <button
           type="button"
           onClick={toggleTheme}
