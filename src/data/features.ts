@@ -66,7 +66,7 @@ export const features: Feature[] = [
   {
     order: 4,
     title: 'Premier League Score Predictor',
-    description: 'Machine learning model that predicts football match scores using Random Forest regression. Trained on 137+ real matches with 0.5 goals MAE accuracy. Features automated weekly retraining and real-time data integration.',
+    description: 'Machine learning model that predicts football match scores using Random Forest regression; trained on 137+ real matches with rolling weekly ingestion and automated retraining, achieving ~0.5 goals MAE accuracy.', 
     image: '/PL_logo.svg',
     metrics: [
       { label: 'Chelsea winning the league', value: '<1%' },

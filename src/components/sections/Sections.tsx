@@ -81,11 +81,10 @@ export function AboutSection() {
             <li>TypeScript</li>
             <li>Python</li>
             <li>Java</li>
-            <li>C++</li>
-            <li>C</li>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>Next.js</li>
+            <li>C++</li>  
+            <li>NumPy</li>
+            <li>Tensorflow</li>
+            <li>Scikit-learn</li>
             <li>React</li>
             <li>Django</li>
             <li>Node.js</li>
@@ -99,8 +98,9 @@ export function AboutSection() {
             <li>Git</li>
             <li>Docker</li>
             <li>AWS</li>
-            <li>Azure</li>
+            <li>MongoDB</li>
             <li>Vercel</li>
+            <li>Supabase</li>
           </ul>
         </motion.div>
       </motion.div>

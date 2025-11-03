@@ -88,7 +88,7 @@ export default function FeatureCard({ feature, index }: { feature: Feature; inde
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-3 py-1.5 bg-gray-900 text-white dark:bg-white dark:text-black rounded-md hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-400 dark:focus-visible:ring-white/40"
             >
-              Try It
+              Try It!
             </a>
           </motion.div>
         )}
