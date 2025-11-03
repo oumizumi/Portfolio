@@ -193,14 +193,14 @@ export default function GitTimeline() {
                 'Rust': '#dea584',
                 'Swift': '#fa7343',
                 'Kotlin': '#A97BFF',
-                'PHP': '#4F5D95',
+                //'PHP': '#4F5D95',
                 'Ruby': '#701516',
                 'C#': '#239120',
                 'Shell': '#89e051',
                 'Dockerfile': '#384d54',
-                'Vue': '#41b883',
+                //'Vue': '#41b883',
                 'React': '#61dafb',
-                'Svelte': '#ff3e00'
+                //'Svelte': '#ff3e00'
             };
 
             const processedLanguages = Object.entries(languageStats)

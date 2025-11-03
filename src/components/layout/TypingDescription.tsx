@@ -11,7 +11,7 @@ export default function TypingDescription() {
         // Delay start for the first typing animation to complete
         const startDelay = setTimeout(() => {
             setStarted(true);
-        }, 2200);
+        }, 1000);
         return () => clearTimeout(startDelay);
     }, []);
 
