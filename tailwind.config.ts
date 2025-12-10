@@ -9,6 +9,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        mono: ['var(--font-jetbrains-mono)', 'SF Mono', 'Fira Code', 'IBM Plex Mono', 'Consolas', 'Monaco', 'Courier New', 'monospace'],
+      },
       animation: {
         shimmer: 'shimmer 2s linear infinite',
       },

@@ -12,7 +12,6 @@ export default function Page() {
     <main
       className="min-h-screen relative overflow-hidden bg-portfolio"
       id="top"
-      style={{ fontFamily: 'Monaco, Menlo, "Courier New", monospace' }}
     >
       <LightDotGrid />
       <FloatingDots />

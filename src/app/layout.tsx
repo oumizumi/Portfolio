@@ -1,16 +1,13 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import ThemeInit from "@/components/layout/ThemeInit";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  display: "swap",
+  fallback: ["SF Mono", "Fira Code", "Consolas", "Monaco", "Courier New", "monospace"],
 });
 
 export const metadata: Metadata = {
@@ -25,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen snap-y snap-mandatory text-gray-900 dark:text-white`}>
+      <body className={`${jetbrainsMono.variable} font-mono antialiased min-h-screen snap-y snap-mandatory text-gray-900 dark:text-white`}>
         <ThemeInit />
         {children}
       </body>
