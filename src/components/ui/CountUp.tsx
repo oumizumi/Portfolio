@@ -14,7 +14,7 @@ function formatNumber(value: number, decimals: number): string {
 
 export default function CountUp({
   value,
-  durationMs = 1200,
+  durationMs = 1500,
   className,
 }: {
   value: string | number;

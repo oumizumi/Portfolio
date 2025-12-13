@@ -8,6 +8,7 @@ export type Feature = {
   metrics?: Metric[];
   tech: string[];
   ctaUrl?: string; // Try It
+  ctaText?: string; // Custom button text (defaults to "Try It!")
   tags?: string[];
   bullets?: string[];
 };
@@ -44,6 +45,7 @@ export const features: Feature[] = [
       { label: 'terms', value: 'F25, W26, S/S25' },
     ],
     tech: ['TypeScript', 'Puppeteer', 'Playwright', 'Express.js'],
+    ctaUrl: 'https://github.com/oumizumi/kairo',
     tags: ['scrapers'],
   },
   {
@@ -58,6 +60,7 @@ export const features: Feature[] = [
     ],
     tech: ['JavaScript', 'Chrome API', 'GitHub API', 'Manifest V3', 'REST API'],
     ctaUrl: 'https://github.com/oumizumi/leethub',
+    ctaText: 'View on Github',
     bullets: [
       'Real-time detection of accepted solutions with automatic GitHub push within 2 seconds',
       'Modular architecture: service workers, content scripts, GitHub API integration with retry logic and error handling'
@@ -74,7 +77,8 @@ export const features: Feature[] = [
       { label: 'Charity FC - making mid-table teams look elite', value: '∞%' },
     ],
     tech: ['Python', 'Numpy', 'Scikit-learn', 'Pickle'],
-    ctaUrl: '',
+    ctaUrl: 'https://github.com/oumizumi/footy_ml.git',
+    ctaText: 'View on Github',
     bullets: [
       'I love football - Eric Cantona'
     ]

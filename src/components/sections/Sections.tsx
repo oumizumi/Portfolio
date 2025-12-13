@@ -90,7 +90,6 @@ export function AboutSection() {
             <li>Node.js</li>
             <li>Tailwind CSS</li>
             <li>PostgreSQL</li>
-            <li>OpenAI</li>
             <li>Puppeteer</li>
             <li>Playwright</li>
             <li>REST API</li>
@@ -101,6 +100,7 @@ export function AboutSection() {
             <li>MongoDB</li>
             <li>Vercel</li>
             <li>Supabase</li>
+            <li>Docker</li>
           </ul>
         </motion.div>
       </motion.div>
