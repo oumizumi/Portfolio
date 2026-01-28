@@ -81,7 +81,7 @@ export function AboutSection() {
             <li>TypeScript</li>
             <li>Python</li>
             <li>Java</li>
-            <li>C++</li>  
+            <li>C++</li>
             <li>NumPy</li>
             <li>Tensorflow</li>
             <li>Scikit-learn</li>
@@ -93,10 +93,8 @@ export function AboutSection() {
             <li>Puppeteer</li>
             <li>Playwright</li>
             <li>REST API</li>
-            <li>GraphQL</li>
             <li>Git</li>
             <li>Docker</li>
-            <li>AWS</li>
             <li>MongoDB</li>
             <li>Vercel</li>
             <li>Supabase</li>

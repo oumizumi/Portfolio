@@ -9,10 +9,13 @@ import CountUp from '@/components/ui/CountUp';
 import ScraperDiagram from '@/components/ui/ScraperDiagram';
 import LeetHubDiagram from '@/components/ui/LeetHubDiagram';
 
+import NestfinderDemo from '@/components/NestfinderDemo';
+
 export default function FeatureCard({ feature, index }: { feature: Feature; index: number }) {
-  const isScraperFeature = index === 1 || feature.image.includes('scraper.svg');
-  const isLeetHubFeature = index === 2 || feature.image.includes('leethub');
+  const isScraperFeature = feature.title.includes('Scrapers');
+  const isLeetHubFeature = feature.title.includes('LeetHub');
   const isPLFeature = feature.image.includes('PL_logo');
+  const isNestfinderFeature = feature.title.toLowerCase().includes('nestfinder');
 
   return (
     <motion.article
@@ -24,8 +27,8 @@ export default function FeatureCard({ feature, index }: { feature: Feature; inde
       className="group border border-gray-300 dark:border-gray-800/40 rounded-xl overflow-hidden bg-white/40 dark:bg-transparent backdrop-blur supports-[backdrop-filter]:bg-white/30"
     >
       <div className="relative">
-        <MacDots />
-        <div className={`relative aspect-[16/9] ${isScraperFeature || isLeetHubFeature ? 'bg-white dark:bg-transparent' : ''} ${isPLFeature ? 'bg-white dark:bg-white' : ''}`}>
+        {!isNestfinderFeature && <MacDots />}
+        <div className={`relative aspect-[16/9] ${isScraperFeature || isLeetHubFeature || isNestfinderFeature ? 'bg-white dark:bg-transparent' : ''} ${isPLFeature ? 'bg-white dark:bg-white' : ''}`}>
           {isScraperFeature ? (
             <div className="absolute inset-0 flex items-center justify-center p-4 mt-8">
               <ScraperDiagram />
@@ -33,6 +36,10 @@ export default function FeatureCard({ feature, index }: { feature: Feature; inde
           ) : isLeetHubFeature ? (
             <div className="absolute inset-0 flex items-center justify-center p-4 mt-8">
               <LeetHubDiagram />
+            </div>
+          ) : isNestfinderFeature ? (
+            <div className="absolute inset-0">
+              <NestfinderDemo />
             </div>
           ) : (
             <Image
@@ -88,7 +95,7 @@ export default function FeatureCard({ feature, index }: { feature: Feature; inde
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-3 py-1.5 bg-gray-900 text-white dark:bg-white dark:text-black rounded-md hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-400 dark:focus-visible:ring-white/40"
             >
-              {feature.ctaText || 'Try It!'}  
+              {feature.ctaText || 'Try It!'}
             </a>
           </motion.div>
         )}

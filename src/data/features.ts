@@ -35,6 +35,21 @@ export const features: Feature[] = [
   },
   {
     order: 2,
+    title: 'NestFinder',
+    description: '2nd Place, uOttaHack (YellowCake Challenge). Built a rental discovery platform ranking Ottawa listings by commute time, budget, safety, and walkability using a multi-agent workflow with Solace Agent Mesh and the OpenAI API.',
+    image: '/nestfinder-demo', // Placeholder, will be used by logic to render component
+    metrics: [
+      { label: 'Hackathon Award', value: '2nd Place' },
+      { label: 'Architecture', value: 'Multi-Agent' }
+    ],
+    tech: ['Next.js 15', 'TypeScript', 'FastAPI', 'Python', 'Solace Agent Mesh', 'OpenAI'],
+    ctaUrl: 'https://nestfinder.app',
+    bullets: [
+      'Designed and implemented the complete frontend UI/UX independently in Next.js and TypeScript, focusing on usability and visual polish.'
+    ]
+  },
+  {
+    order: 3,
     title: 'Your Scrapers Overview',
     description: 'Multiple Headless scrapers that collect uOttawa course data across terms and expose structured, real-time availability.',
     image: '/scraper-new.svg',
@@ -45,11 +60,12 @@ export const features: Feature[] = [
       { label: 'terms', value: 'F25, W26, S/S25' },
     ],
     tech: ['TypeScript', 'Puppeteer', 'Playwright', 'Express.js'],
+    ctaText: 'View on Github',
     ctaUrl: 'https://github.com/oumizumi/kairo',
     tags: ['scrapers'],
   },
   {
-    order: 3,
+    order: 4,
     title: 'LeetHub',
     description: 'A Chrome extension that automatically synchronizes accepted LeetCode solutions to GitHub, enabling me to maintain a well-organized portfolio of their coding practice with real-time detection, smart organization, and zero-friction backup.',
     image: '/leethub-new.svg',
@@ -67,9 +83,9 @@ export const features: Feature[] = [
     ],
   },
   {
-    order: 4,
+    order: 5,
     title: 'Premier League Score Predictor',
-    description: 'Machine learning model that predicts football match scores using Random Forest regression; trained on 137+ real matches with rolling weekly ingestion and automated retraining, achieving ~0.5 goals MAE accuracy.', 
+    description: 'Machine learning model that predicts football match scores using Random Forest regression; trained on 137+ real matches with rolling weekly ingestion and automated retraining, achieving ~0.5 goals MAE accuracy.',
     image: '/PL_logo.svg',
     metrics: [
       { label: 'Chelsea winning the league', value: '<1%' },

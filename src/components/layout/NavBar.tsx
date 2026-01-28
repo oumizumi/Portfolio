@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 
 const links = [
-  { href: '/latest.pdf', label: 'Resume' },
+  { href: '/latest_coop_resume.pdf', label: 'Resume' },
   { href: '#contact', label: 'Contact' },
 ];
 

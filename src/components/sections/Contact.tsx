@@ -57,12 +57,12 @@ export default function Contact() {
 
           <motion.div variants={fadeUp} className="flex flex-col items-start gap-3 text-gray-700 dark:text-white/70">
             <a
-              href="mailto:oghar074@uottawa.ca"
+              href="mailto:ofgharad@gmail.com"
               aria-label="Email"
               className="inline-flex items-center gap-2 hover:opacity-90"
             >
               <MailIcon className="w-5 h-5" />
-              <span>oghar074@uottawa.ca</span>
+              <span>ofgharad@gmail.com</span>
             </a>
             <div className="inline-flex items-center gap-2" aria-label="Location: Ottawa, ON">
               <Image src="/globe.svg" alt="Location" width={20} height={20} />

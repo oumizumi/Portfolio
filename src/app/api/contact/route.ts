@@ -74,7 +74,7 @@ export async function POST(req: NextRequest) {
       return new Response(JSON.stringify({ error: 'Invalid email' }), { status: 400 });
     }
 
-    const toAddress = process.env.CONTACT_TO_EMAIL || 'oghar074@uottawa.ca';
+    const toAddress = process.env.CONTACT_TO_EMAIL || 'ofgharad@gmail.com';
     const derivedSubject = `Portfolio contact from ${email}`.slice(0, 160);
 
     const html = `
