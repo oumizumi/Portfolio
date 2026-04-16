@@ -1,18 +1,24 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import ThemeInit from "@/components/layout/ThemeInit";
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  display: "swap",
+});
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
   subsets: ["latin"],
   display: "swap",
-  fallback: ["SF Mono", "Fira Code", "Consolas", "Monaco", "Courier New", "monospace"],
 });
 
 export const metadata: Metadata = {
-title: "my portfolio! #coyb!",
-  description: "coyb",
+  title: "oumizumi",
+  description: "second-year CS student building clean interfaces and reliable systems.",
 };
 
 export default function RootLayout({
@@ -22,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${jetbrainsMono.variable} font-mono antialiased min-h-screen snap-y snap-mandatory text-gray-900 dark:text-white`}>
+      <body className={`${inter.variable} ${jetbrainsMono.variable} font-sans min-h-screen bg-base text-warm-white`}>
         <ThemeInit />
         {children}
       </body>

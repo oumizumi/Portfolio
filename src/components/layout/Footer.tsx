@@ -1,49 +1,151 @@
 'use client';
 
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
+const navLinks = [
+  { href: '/',             label: 'Home' },
+  { href: '/about',        label: 'About' },
+  { href: '/people',       label: 'People' },
+  { href: '/experiences',  label: 'Experience' },
+  { href: '/blog',         label: 'Blog' },
+  { href: '/contact',      label: 'Contact' },
+];
+
 export default function Footer() {
-  const [theme, setTheme] = useState<'dark' | 'light'>('dark');
+  const [isDark, setIsDark] = useState(true);
 
   useEffect(() => {
-    const stored = (typeof window !== 'undefined' && localStorage.getItem('theme')) as 'dark' | 'light' | null;
-    const initial: 'dark' | 'light' = stored ?? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    document.documentElement.classList.remove('dark', 'light');
-    document.documentElement.classList.add(initial);
-    setTheme(initial);
+    setIsDark(!document.documentElement.classList.contains('light'));
+    const observer = new MutationObserver(() => {
+      setIsDark(!document.documentElement.classList.contains('light'));
+    });
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+    return () => observer.disconnect();
   }, []);
 
   function toggleTheme() {
-    const next: 'dark' | 'light' = theme === 'dark' ? 'light' : 'dark';
-    document.documentElement.classList.remove('dark', 'light');
-    document.documentElement.classList.add(next);
+    const next = isDark ? 'light' : 'dark';
+    document.documentElement.classList.toggle('light', next === 'light');
+    document.documentElement.classList.toggle('dark', next === 'dark');
     localStorage.setItem('theme', next);
-    setTheme(next);
+    setIsDark(next === 'dark');
   }
 
-  const isDark = theme === 'dark';
+  const bg     = isDark ? '#000000' : '#F6F6F6';
+  const text   = isDark ? '#F6F6F6' : '#000000';
+  const muted  = isDark ? 'rgba(246,246,246,0.60)' : 'rgba(0,0,0,0.60)';
+  const divider = isDark ? 'rgba(246,246,246,0.08)' : 'rgba(0,0,0,0.08)';
+  const accent = '#A8C5DA';
 
   return (
-    <footer className="border-t border-gray-200 dark:border-gray-800/40">
-      <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between text-sm">
-        <div className="text-gray-600 dark:text-white/60">© oumizumi</div>
-        <button
-          type="button"
-          onClick={toggleTheme}
-          aria-pressed={isDark}
-          className="inline-flex items-center gap-2 rounded-md px-3 py-1.5 border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-white/80 hover:bg-gray-100 dark:hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
-        >
-          {isDark ? (
-            // Moon for dark mode
-            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" className="opacity-90 text-gray-300"><path fill="currentColor" d="M21.64 13a1 1 0 0 0-1.05-.14A8 8 0 0 1 11.1 3.41a1 1 0 0 0-1.19-1.3A10 10 0 1 0 22 14a1 1 0 0 0-.36-1Z"/></svg>
-          ) : (
-            // Sun for light mode
-            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" className="opacity-90 text-amber-500"><path fill="currentColor" d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12Zm0 4a1 1 0 0 1-1-1v-1a1 1 0 1 1 2 0v1a1 1 0 0 1-1 1Zm0-18a1 1 0 0 1-1-1V2a1 1 0 1 1 2 0v1a1 1 0 0 1-1 1Zm10 9a1 1 0 0 1-1 1h-1a1 1 0 1 1 0-2h1a1 1 0 0 1 1 1ZM4 12a1 1 0 0 1-1 1H2a1 1 0 1 1 0-2h1a1 1 0 0 1 1 1Zm13.66 6.66a1 1 0 0 1-1.41 0l-.71-.71a1 1 0 1 1 1.41-1.41l.71.71a1 1 0 0 1 0 1.41ZM7.05 6.05a1 1 0 0 1-1.41 0l-.71-.71A1 1 0 1 1 6.34 3.93l.71.71a1 1 0 0 1 0 1.41Zm11.31-1.41a1 1 0 0 1 0 1.41l-.71.71A1 1 0 1 1 16.24 5l.71-.71a1 1 0 0 1 1.41 0ZM6.34 17.66a1 1 0 0 1-1.41 0l-.71-.71a1 1 0 1 1 1.41-1.41l.71.71a1 1 0 0 1 0 1.41Z"/></svg>
-          )}
-          <span className="sr-only">Toggle theme</span>
-          <span>{isDark ? 'Dark' : 'Light'}</span>
-        </button>
+    <footer style={{ background: bg, color: text, marginTop: '6rem', borderTop: `1px solid ${divider}` }}>
+
+      <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '4rem 2rem 0' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+
+          {/* Left: Navigation */}
+          <div>
+            <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: accent, fontWeight: 600, marginBottom: '1.5rem', marginTop: 0 }}>
+              Navigation
+            </p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.9rem' }}>
+              {navLinks.map((l) => (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  className="relative font-light text-warm-white/60 hover:text-warm-white transition-colors duration-200 w-fit
+                    after:absolute after:bottom-[-2px] after:left-0 after:h-px after:w-full after:rounded-full
+                    after:bg-accent after:scale-x-0 after:origin-left after:transition-transform after:duration-300
+                    hover:after:scale-x-100"
+                  style={{ fontSize: '14px', textDecoration: 'none' }}
+                >
+                  {l.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Right: Social icons */}
+          <div>
+            <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: accent, fontWeight: 600, marginBottom: '1.5rem', marginTop: 0 }}>
+              Contact
+            </p>
+            <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
+
+              <a href="https://github.com/oumizumi" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
+                style={{ color: muted, transition: 'color 0.2s', lineHeight: 0 }}
+                onMouseEnter={e => (e.currentTarget.style.color = text)}
+                onMouseLeave={e => (e.currentTarget.style.color = muted)}>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="20" height="20">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                </svg>
+              </a>
+
+              <a href="https://www.linkedin.com/in/oumzumi" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
+                style={{ color: muted, transition: 'color 0.2s', lineHeight: 0 }}
+                onMouseEnter={e => (e.currentTarget.style.color = text)}
+                onMouseLeave={e => (e.currentTarget.style.color = muted)}>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="20" height="20">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                  <rect x="2" y="9" width="4" height="12"/>
+                  <circle cx="4" cy="4" r="2"/>
+                </svg>
+              </a>
+
+              <a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="X"
+                style={{ color: muted, transition: 'color 0.2s', lineHeight: 0 }}
+                onMouseEnter={e => (e.currentTarget.style.color = text)}
+                onMouseLeave={e => (e.currentTarget.style.color = muted)}>
+                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+              </a>
+
+              <a href="mailto:ofgharad@gmail.com" aria-label="Email"
+                style={{ color: muted, transition: 'color 0.2s', lineHeight: 0 }}
+                onMouseEnter={e => (e.currentTarget.style.color = text)}
+                onMouseLeave={e => (e.currentTarget.style.color = muted)}>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="20" height="20">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </a>
+
+            </div>
+          </div>
+
+        </div>
       </div>
+
+      {/* Bottom bar */}
+      <div style={{ maxWidth: '1100px', margin: '2.5rem auto 0' }}>
+        <div style={{ padding: '1.25rem 2rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+          <span style={{ fontSize: '12px', color: muted, letterSpacing: '0.04em' }}>
+            © {new Date().getFullYear()} Oumer Gharad. All rights reserved.
+          </span>
+
+          <button
+            onClick={toggleTheme}
+            aria-label="Toggle theme"
+            style={{ background: 'none', border: 'none', cursor: 'pointer', color: muted, padding: '4px', lineHeight: 0, transition: 'color 0.2s' }}
+            onMouseEnter={e => (e.currentTarget.style.color = text)}
+            onMouseLeave={e => (e.currentTarget.style.color = muted)}
+          >
+            {isDark ? (
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" width="17" height="17">
+                <circle cx="12" cy="12" r="4"/>
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+              </svg>
+            ) : (
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" width="17" height="17">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+              </svg>
+            )}
+          </button>
+        </div>
+      </div>
+
     </footer>
   );
 }

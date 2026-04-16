@@ -256,12 +256,12 @@ export default function GitTimeline() {
 
     const getLevelColor = (level: number) => {
         switch (level) {
-            case 0: return 'bg-gray-100 dark:bg-gray-800';
-            case 1: return 'bg-green-200 dark:bg-green-900';
-            case 2: return 'bg-green-300 dark:bg-green-700';
-            case 3: return 'bg-green-400 dark:bg-green-600';
-            case 4: return 'bg-green-500 dark:bg-green-500';
-            default: return 'bg-gray-100 dark:bg-gray-800';
+            case 0: return 'bg-subtle';
+            case 1: return 'bg-green-900';
+            case 2: return 'bg-green-700';
+            case 3: return 'bg-green-600';
+            case 4: return 'bg-green-500';
+            default: return 'bg-subtle';
         }
     };
 
@@ -277,13 +277,13 @@ export default function GitTimeline() {
     // Prevent hydration mismatch by not rendering dynamic content until mounted
     if (!mounted) {
         return (
-            <section className="py-20 border-b border-gray-200 dark:border-gray-800">
-                <div className="max-w-6xl mx-auto px-4 text-center">
+            <section className="py-16 border-t border-subtle">
+                <div className="page-container-wide text-center">
                     <div className="animate-pulse">
-                        <div className="h-8 bg-gray-200 dark:bg-gray-700 rounded w-48 mx-auto mb-4"></div>
-                        <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-64 mx-auto mb-8"></div>
-                        <div className="bg-white dark:bg-gray-900/50 rounded-xl p-6 border border-gray-200 dark:border-gray-800">
-                            <div className="h-32 bg-gray-200 dark:bg-gray-700 rounded"></div>
+                        <div className="h-6 bg-subtle rounded w-48 mx-auto mb-4"></div>
+                        <div className="h-4 bg-subtle rounded w-64 mx-auto mb-8"></div>
+                        <div className="bg-surface rounded-xl p-6 border border-subtle">
+                            <div className="h-32 bg-subtle rounded"></div>
                         </div>
                     </div>
                 </div>
@@ -292,36 +292,37 @@ export default function GitTimeline() {
     }
 
     return (
-        <section className="py-20 border-b border-gray-200 dark:border-gray-800">
+        <section className="py-16 border-t border-subtle">
             <motion.div
                 variants={staggerContainer}
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true, amount: 0.3 }}
-                className="max-w-6xl mx-auto px-4"
+                className="page-container-wide"
             >
-                <motion.div variants={fadeUp} className="text-center mb-12">
-                    <h3 className="text-3xl font-light tracking-tight mb-4">
-                        GitHub Activity
+                <motion.div variants={fadeUp} className="mb-10">
+                    <p className="text-warm-white/55 font-light tracking-widest uppercase mb-3" style={{ fontSize: '11px' }}>github</p>
+                    <h3 className="text-2xl font-light text-warm-white tracking-tight mb-2">
+                        activity
                     </h3>
-                    <p className="text-gray-700 dark:text-white/70">
-                        {loading ? 'Loading GitHub data...' : error ? 'Unable to load GitHub data' : `${totalCommits} contributions in the last year`}
+                    <p className="text-warm-white/65 font-light" style={{ fontSize: '14px' }}>
+                        {loading ? 'loading...' : error ? 'unable to load GitHub data' : `${totalCommits} contributions in the last year`}
                     </p>
                     {error && (
                         <button
                             onClick={fetchGitHubData}
-                            className="mt-2 text-sm text-blue-600 dark:text-blue-400 hover:underline"
+                            className="mt-2 text-sm text-accent hover:underline"
                         >
                             Try again
                         </button>
                     )}
                 </motion.div>
 
-                <motion.div variants={fadeUp} className="bg-white dark:bg-gray-900/50 rounded-xl p-4 md:p-6 border border-gray-200 dark:border-gray-800">
+                <motion.div variants={fadeUp} className="bg-surface rounded-xl p-4 md:p-6 border border-subtle">
                     <div className="overflow-x-auto -mx-4 px-4 md:mx-0 md:px-0">
                         <div className="inline-block min-w-full">
                             {/* Month labels - hidden on mobile */}
-                            <div className="hidden md:flex justify-between text-xs text-gray-500 dark:text-gray-400 mb-2 ml-8">
+                            <div className="hidden md:flex justify-between text-warm-white/55 font-light mb-2 ml-8" style={{ fontSize: '11px' }}>
                                 {months.map((month, index) => (
                                     <span key={month} className={index % 2 === 0 ? '' : 'opacity-0'}>
                                         {month}
@@ -331,7 +332,7 @@ export default function GitTimeline() {
 
                             <div className="flex gap-1">
                                 {/* Day labels */}
-                                <div className="flex flex-col gap-1 text-xs text-gray-500 dark:text-gray-400 mr-2">
+                                <div className="flex flex-col gap-1 text-warm-white/55 font-light mr-2" style={{ fontSize: '11px' }}>
                                     {days.map((day, index) => (
                                         <div key={day} className="h-3 flex items-center">
                                             <span className="hidden md:inline">{index % 2 === 1 && day}</span>
@@ -370,7 +371,7 @@ export default function GitTimeline() {
                     </div>
 
                     {/* Legend */}
-                    <div className="flex items-center justify-between mt-4 text-xs text-gray-500 dark:text-gray-400">
+                    <div className="flex items-center justify-between mt-4 text-warm-white/55 font-light" style={{ fontSize: '11px' }}>
                         <span>Less</span>
                         <div className="flex gap-1">
                             {[0, 1, 2, 3, 4].map((level) => (
@@ -384,17 +385,14 @@ export default function GitTimeline() {
                     </div>
                 </motion.div>
 
-
-
                 {/* Most Used Languages */}
                 {languages.length > 0 && (
                     <motion.div variants={fadeUp} className="mt-8">
-                        <h4 className="text-xl font-light tracking-tight mb-6 text-center">
-                            Most Used Languages
+                        <h4 className="text-warm-white/55 font-light tracking-widest uppercase mb-6" style={{ fontSize: '11px' }}>
+                            most used languages
                         </h4>
 
-                        <div className="bg-white dark:bg-gray-900/50 rounded-xl p-6 border border-gray-200 dark:border-gray-800">
-                            {/* Language bars */}
+                        <div className="bg-surface rounded-xl p-6 border border-subtle">
                             <div className="space-y-4">
                                 {languages.map((lang, index) => (
                                     <motion.div
@@ -404,10 +402,10 @@ export default function GitTimeline() {
                                         transition={{ delay: index * 0.1 }}
                                         className="flex items-center gap-3"
                                     >
-                                        <div className="w-20 text-sm text-gray-700 dark:text-gray-300 font-medium">
+                                        <div className="w-20 text-sm text-warm-white font-light">
                                             {lang.name}
                                         </div>
-                                        <div className="flex-1 bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
+                                        <div className="flex-1 bg-subtle rounded-full h-1.5 overflow-hidden">
                                             <motion.div
                                                 className="h-full rounded-full"
                                                 style={{ backgroundColor: lang.color }}
@@ -416,31 +414,11 @@ export default function GitTimeline() {
                                                 transition={{ delay: index * 0.1 + 0.2, duration: 0.8 }}
                                             />
                                         </div>
-                                        <div className="w-12 text-sm text-gray-600 dark:text-gray-400 text-right">
+                                        <div className="w-12 text-warm-white/60 font-light text-right" style={{ fontSize: '11px' }}>
                                             {lang.percentage.toFixed(1)}%
                                         </div>
                                     </motion.div>
                                 ))}
-                            </div>
-
-                            {/* Language dots overview */}
-                            <div className="mt-6 pt-4 border-t border-gray-200 dark:border-gray-700">
-                                <div className="flex flex-wrap gap-2 justify-center">
-                                    {languages.map((lang) => (
-                                        <div
-                                            key={lang.name}
-                                            className="flex items-center gap-2 px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-xs"
-                                        >
-                                            <div
-                                                className="w-3 h-3 rounded-full"
-                                                style={{ backgroundColor: lang.color }}
-                                            />
-                                            <span className="text-gray-700 dark:text-gray-300">
-                                                {lang.name}
-                                            </span>
-                                        </div>
-                                    ))}
-                                </div>
                             </div>
                         </div>
                     </motion.div>
