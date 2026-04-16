@@ -41,8 +41,8 @@ export default function Footer() {
   return (
     <footer style={{ background: bg, color: text, marginTop: '6rem', borderTop: `1px solid ${divider}` }}>
 
-      <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '4rem 2rem 0' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+      <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '3rem 2rem 0' }}>
+        <div className="flex flex-col gap-10 sm:flex-row sm:justify-between sm:items-start">
 
           {/* Left: Navigation */}
           <div>

@@ -63,8 +63,8 @@ const projects = [
     name: 'NestFinder',
     label: '2nd Place, uOttaHack (YellowCake)',
     tech: 'Next.js 15, TypeScript, FastAPI, Python',
-    github: 'https://github.com/oumizumi/nestfinder',
-    website: 'https://github.com/oumizumi/nestfinder',
+    github: 'https://github.com/Homeless-Gonnabe-5-0/Nestfinder',
+    website: 'https://nest-cyan-seven.vercel.app',
     bullets: [
       'Built a rental platform on Solace Agent Mesh to orchestrate intelligent multi-agent AI listing workflows',
       'Scraped live rental listings across multiple platforms using YellowCake to power real-time data ingestion',

@@ -43,7 +43,7 @@ export default function AboutPage() {
           </section>
 
           {/* CTA */}
-          <section className="flex gap-4">
+          <section className="flex flex-wrap gap-4">
             <a
               href="/contact"
               className="px-5 py-2.5 bg-accent text-fg rounded text-sm font-medium hover:opacity-75 transition-opacity"

@@ -44,9 +44,9 @@ export default function PeoplePage() {
               </h2>
               <div className="space-y-6">
                 {items.map((person) => (
-                  <article key={person.name} className="flex items-start gap-6 p-5 border border-warm-white/20">
+                  <article key={person.name} className="flex flex-col sm:flex-row items-start gap-6 p-5 border border-warm-white/20">
                     {/* Left: image + name */}
-                    <div className="flex-shrink-0" style={{ width: '220px' }}>
+                    <div className="flex-shrink-0 w-full sm:w-[220px]">
                       <div className="relative w-full" style={{ height: '300px' }}>
                         {person.image ? (
                           // eslint-disable-next-line @next/next/no-img-element

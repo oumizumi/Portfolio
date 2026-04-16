@@ -32,7 +32,7 @@ export default function Hero() {
         variants={staggerContainer}
         initial="hidden"
         animate="show"
-        className="page-container-wide py-24 w-full"
+        className="page-container-wide py-16 sm:py-24 w-full"
       >
         <motion.h1
           variants={fadeUp}

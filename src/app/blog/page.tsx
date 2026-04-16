@@ -52,14 +52,14 @@ export default function BlogPage() {
                     {post.excerpt}
                   </p>
                 </div>
-                <div className="flex sm:flex-col items-start sm:items-end gap-2 flex-shrink-0 sm:pl-6">
+                <div className="flex flex-col items-start sm:items-end gap-1.5 flex-shrink-0 sm:pl-6">
                   <span
-                    className="text-accent font-normal border border-accent/40 rounded-full px-3 py-0.5 whitespace-nowrap"
+                    className="text-accent font-normal border border-accent/40 rounded-full px-3 py-0.5"
                     style={{ fontSize: '12px' }}
                   >
                     {post.category}
                   </span>
-                  <span className="text-warm-white/40 font-normal whitespace-nowrap" style={{ fontSize: '13px' }}>
+                  <span className="text-warm-white/40 font-normal" style={{ fontSize: '13px' }}>
                     {formatDate(post.date)}
                   </span>
                 </div>
