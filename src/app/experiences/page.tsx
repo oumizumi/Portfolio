@@ -92,15 +92,46 @@ export default function ExperiencesPage() {
       <div className="page-container">
 
         {/* Header */}
-        <div className="mb-16">
+        <div className="mb-10 sm:mb-16">
           <p className="text-warm-white/50 font-light tracking-widest uppercase mb-4" style={{ fontSize: '12px' }}>portfolio</p>
-          <h1 className="text-4xl md:text-5xl font-light text-warm-white tracking-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-light text-warm-white tracking-tight">
             experience &amp; projects.
           </h1>
         </div>
 
+        {/* ── Education ───────────────────────── */}
+        <section className="mb-10 sm:mb-16">
+          <h2 className="text-warm-white/55 font-light tracking-widest uppercase mb-8" style={{ fontSize: '11px' }}>
+            education
+          </h2>
+          <article>
+            <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-0.5 mb-1">
+              <h3 className="text-warm-white font-semibold" style={{ fontSize: '20px' }}>
+                B.Sc. Computer Science
+              </h3>
+              <span className="text-warm-white/40 font-normal shrink-0" style={{ fontSize: '14px' }}>
+                Sep 2024 – May 2028
+              </span>
+            </div>
+            <p className="text-warm-white/60 font-normal mb-4" style={{ fontSize: '15px' }}>
+              University of Ottawa · Ottawa, ON
+            </p>
+            <ul className="space-y-2.5">
+              {[
+                'Relevant coursework: Data Structures & Algorithms, Operating Systems, Database Systems, Linear Algebra, Discrete Math',
+                'Member of Kelpie Robotics and the Mer Lab research group',
+              ].map((b, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <span className="w-1.5 h-1.5 rounded-full bg-accent/70 flex-shrink-0 mt-[8px]" />
+                  <span className="text-warm-white/80 font-normal" style={{ fontSize: '16px', lineHeight: 1.75 }}>{b}</span>
+                </li>
+              ))}
+            </ul>
+          </article>
+        </section>
+
         {/* ── Experience ───────────────────────── */}
-        <section className="mb-16">
+        <section className="mb-10 sm:mb-16">
           <h2 className="text-warm-white/55 font-light tracking-widest uppercase mb-8" style={{ fontSize: '11px' }}>
             experience
           </h2>
@@ -140,7 +171,7 @@ export default function ExperiencesPage() {
             {projects.map((p) => (
               <article key={p.name}>
                 {/* Title row */}
-                <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1 mb-1">
+                <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 sm:gap-x-6 mb-1">
                   <div className="flex flex-wrap items-baseline gap-x-3">
                     <h3 className="text-warm-white font-semibold" style={{ fontSize: '20px' }}>
                       {p.name}

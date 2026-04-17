@@ -34,6 +34,14 @@ export default function Hero() {
         animate="show"
         className="page-container-wide py-16 sm:py-24 w-full"
       >
+        {/* Open to work badge */}
+        <motion.div variants={fadeUp} className="flex items-center gap-2 mb-6">
+          <span className="w-1.5 h-1.5 rounded-full bg-accent/70 flex-shrink-0" />
+          <span className="text-warm-white/50 font-light" style={{ fontSize: '13px', letterSpacing: '0.03em' }}>
+            open to new opportunities :)
+          </span>
+        </motion.div>
+
         <motion.h1
           variants={fadeUp}
           className="text-2xl md:text-3xl lg:text-4xl font-light tracking-tight text-warm-white leading-relaxed mb-5 max-w-2xl"

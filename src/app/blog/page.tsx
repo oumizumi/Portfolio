@@ -1,6 +1,7 @@
 import PageLayout from '@/components/layout/PageLayout';
 import Link from 'next/link';
 import { posts } from '@/data/blog';
+import { readingTime } from '@/lib/readingTime';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -23,9 +24,9 @@ export default function BlogPage() {
     <PageLayout>
         <div className="page-container">
           {/* Header */}
-          <div className="mb-16">
+          <div className="mb-10 sm:mb-16">
             <p className="text-warm-white/50 font-light tracking-widest uppercase mb-4" style={{ fontSize: '12px' }}>blog</p>
-            <h1 className="text-4xl md:text-5xl font-light text-warm-white tracking-tight mb-4">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-light text-warm-white tracking-tight mb-4">
               writing.
             </h1>
             <p className="text-warm-white/75 font-light" style={{ fontSize: '17px', lineHeight: 1.85 }}>
@@ -62,6 +63,11 @@ export default function BlogPage() {
                   <span className="text-warm-white/40 font-normal" style={{ fontSize: '13px' }}>
                     {formatDate(post.date)}
                   </span>
+                  {post.content && (
+                    <span className="text-warm-white/30 font-normal" style={{ fontSize: '12px' }}>
+                      {readingTime(post.content)} min read
+                    </span>
+                  )}
                 </div>
               </Link>
             ))}

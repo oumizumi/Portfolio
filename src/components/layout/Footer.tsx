@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 const navLinks = [
   { href: '/',             label: 'Home' },
   { href: '/about',        label: 'About' },
+  { href: '/now',          label: 'Now' },
   { href: '/people',       label: 'People' },
   { href: '/experiences',  label: 'Experience' },
   { href: '/blog',         label: 'Blog' },
@@ -120,7 +121,7 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div style={{ maxWidth: '1100px', margin: '2.5rem auto 0' }}>
-        <div style={{ padding: '1.25rem 2rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        <div style={{ padding: '1.25rem 2rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem' }}>
           <span style={{ fontSize: '12px', color: muted, letterSpacing: '0.04em' }}>
             © {new Date().getFullYear()} Oumer Gharad. All rights reserved.
           </span>

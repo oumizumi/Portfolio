@@ -22,9 +22,9 @@ export default function PeoplePage() {
       <div className="page-container">
 
         {/* Header */}
-        <div className="mb-16">
+        <div className="mb-10 sm:mb-16">
           <p className="text-warm-white/50 font-light tracking-widest uppercase mb-4" style={{ fontSize: '12px' }}>people</p>
-          <h1 className="text-4xl md:text-5xl font-light text-warm-white tracking-tight mb-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-light text-warm-white tracking-tight mb-4">
             people who changed the game
           </h1>
           <p className="text-warm-white/75 font-light" style={{ fontSize: '17px', lineHeight: 1.85 }}>
@@ -47,7 +47,7 @@ export default function PeoplePage() {
                   <article key={person.name} className="flex flex-col sm:flex-row items-start gap-6 p-5 border border-warm-white/20">
                     {/* Left: image + name */}
                     <div className="flex-shrink-0 w-full sm:w-[220px]">
-                      <div className="relative w-full" style={{ height: '300px' }}>
+                      <div className="relative w-full h-48 sm:h-[300px]">
                         {person.image ? (
                           // eslint-disable-next-line @next/next/no-img-element
                           <img

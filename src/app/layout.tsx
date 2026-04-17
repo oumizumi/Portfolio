@@ -16,9 +16,32 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
+const siteUrl = 'https://oumizumi.vercel.app';
+
 export const metadata: Metadata = {
-  title: "oumizumi",
-  description: "second-year CS student building clean interfaces and reliable systems.",
+  title: {
+    default: 'Oumer Gharad',
+    template: '%s · Oumer Gharad',
+  },
+  description: 'Second-year CS student at uOttawa building clean interfaces and reliable systems.',
+  metadataBase: new URL(siteUrl),
+  openGraph: {
+    title: 'Oumer Gharad',
+    description: 'Second-year CS student at uOttawa building clean interfaces and reliable systems.',
+    url: siteUrl,
+    siteName: 'Oumer Gharad',
+    locale: 'en_CA',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Oumer Gharad',
+    description: 'Second-year CS student at uOttawa building clean interfaces and reliable systems.',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({

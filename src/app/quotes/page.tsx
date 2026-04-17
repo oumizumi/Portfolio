@@ -12,9 +12,9 @@ export default function QuotesPage() {
     <PageLayout>
         <div className="page-container">
           {/* Header */}
-          <div className="mb-16">
+          <div className="mb-10 sm:mb-16">
             <p className="text-warm-white/50 font-light tracking-widest uppercase mb-4" style={{ fontSize: '12px' }}>quotes</p>
-            <h1 className="text-4xl md:text-5xl font-light text-warm-white tracking-tight mb-4">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-light text-warm-white tracking-tight mb-4">
               words worth keeping.
             </h1>
             <p className="text-warm-white/75 font-light" style={{ fontSize: '17px', lineHeight: 1.85 }}>
