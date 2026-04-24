@@ -100,6 +100,16 @@ export default async function BlogPostPage({ params }: Props) {
           {/* Content */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.6rem' }}>
             {blocks.map((block, i) => {
+              // Image
+              const imgMatch = block.match(/^!\[([^\]]*)\]\(([^)]+)\)$/);
+              if (imgMatch) {
+                return (
+                  <img key={i} src={imgMatch[2]} alt={imgMatch[1]}
+                    className="w-full rounded-lg"
+                    style={{ maxHeight: '480px', objectFit: 'cover' }}
+                  />
+                );
+              }
               // Horizontal rule
               if (block.trim() === '---') {
                 return <hr key={i} className="border-subtle" />;
