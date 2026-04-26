@@ -2,7 +2,7 @@ import PageLayout from '@/components/layout/PageLayout';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'About — oumizumi',
+  title: 'About | oumizumi',
   description: 'Second-year CS student at uOttawa, interested in technology, aviation, and history.',
 };
 

@@ -3,7 +3,7 @@ import { quoteGroups } from '@/data/quotes';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Quotes — oumizumi',
+  title: 'Quotes | oumizumi',
   description: 'A curated collection of quotes I keep coming back to.',
 };
 
@@ -39,7 +39,7 @@ export default function QuotesPage() {
                         &ldquo;{q.text}&rdquo;
                       </p>
                       <footer className="flex flex-col gap-0.5">
-                        <span className="text-accent/80 font-light" style={{ fontSize: '13px' }}>— {q.author}</span>
+                        <span className="text-accent/80 font-light" style={{ fontSize: '13px' }}>{q.author}</span>
                         {q.source && (
                           <span className="text-warm-white/55 font-light italic" style={{ fontSize: '12px' }}>{q.source}</span>
                         )}

@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const post = posts.find((p) => p.slug === slug);
   if (!post) return {};
-  return { title: `${post.title} — oumizumi`, description: post.excerpt };
+  return { title: `${post.title} | oumizumi`, description: post.excerpt };
 }
 
 function renderInline(text: string): React.ReactNode[] {

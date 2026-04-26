@@ -37,7 +37,7 @@ export const quoteGroups: QuoteGroup[] = [
     theme: 'On Learning',
     quotes: [
       {
-        text: 'The first principle is that you must not fool yourself — and you are the easiest person to fool.',
+        text: 'The first principle is that you must not fool yourself, and you are the easiest person to fool.',
         author: 'Richard Feynman',
       },
       {

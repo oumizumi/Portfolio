@@ -4,8 +4,8 @@ import CopyEmail from '@/components/ui/CopyEmail';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Contact — oumizumi',
-  description: "Get in touch — I'm always open to new projects and opportunities.",
+  title: 'Contact | oumizumi',
+  description: "Get in touch. I'm always open to new projects and opportunities.",
 };
 
 export default function ContactPage() {

@@ -38,9 +38,9 @@ export default function Hero() {
       >
         {/* Open to work badge */}
         <motion.div variants={fadeUp} className="flex items-center gap-2 mb-6">
-          <span className="w-1.5 h-1.5 rounded-full bg-accent/70 flex-shrink-0" />
-          <span className="text-warm-white/50 font-light" style={{ fontSize: '13px', letterSpacing: '0.03em' }}>
-            open to new opportunities :)
+          <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse flex-shrink-0" />
+          <span className="text-accent font-medium" style={{ fontSize: '13px', letterSpacing: '0.04em' }}>
+            open to new opportunities
           </span>
         </motion.div>
 
@@ -58,7 +58,7 @@ export default function Hero() {
             <polyline points="12 6 12 12 16 14"/>
           </svg>
           <span className="text-warm-white/60" style={{ fontSize: '15px', fontVariantNumeric: 'tabular-nums', letterSpacing: '0.04em' }}>
-            {time} — Ottawa, ON
+            {time} · Ottawa, ON
           </span>
         </motion.div>
 

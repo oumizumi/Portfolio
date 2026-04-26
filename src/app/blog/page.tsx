@@ -5,7 +5,7 @@ import { readingTime } from '@/lib/readingTime';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Blog — oumizumi',
+  title: 'Blog | oumizumi',
   description: 'Writing about building software, learning, and other things.',
 };
 
